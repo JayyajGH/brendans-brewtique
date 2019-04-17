@@ -26,11 +26,18 @@
 <script>
   export default {
     name: 'TapList',
+    data() {
+      return {
+        tapList: []
+      }
+    },
     async created() {
-        //taplist.io	https://taplist.io/taplist-436469
-        //https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=670357
-        //const ip = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=670357')
-        //console.log(ip);
+      try {
+        this.tapList = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
+      }
+      catch(error) {
+        console.log('Failed to get the taplist details');
+      }
     }
   }
 </script>
