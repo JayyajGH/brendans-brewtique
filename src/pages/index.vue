@@ -49,34 +49,19 @@
 		<div class="image-section image--taps"></div>
 		<div class="image-text">
 			<h2 class="heading2 heading--light">What's on tap?</h2>
-			<!--taplist.io	https://taplist.io/taplist-436469-->
-			<ul>
-				<li class="u-margin-bottom--medium">
-					<h3 class="heading3">Umbral Abyss by Vibrant Forest</h3>
-					<p>11.5% Imperial Coffee Stout</p>
-				</li>
-				<li class="u-margin-bottom--medium">
-					<h3 class="heading3">Steading rolling man by Deya</h3>
-					<p>5.2% American Pale Ale</p>
-				</li>
-				<li class="u-margin-bottom--medium">
-					<h3 class="heading3">Even sharks need water by Verdant Brewing Co</h3>
-					<p>6.5% New England IPA</p>
-				</li>
-				<li class="u-margin-bottom--medium">
-					<h3 class="heading3">Fields Forever by Tiny Rebel</h3>
-					<p>6.5% New England IPA</p>
-				</li>
-				<li class="u-margin-bottom--medium">
-					<h3 class="heading3">Yellow Belly by Buxton Brewery</h3>
-					<p>11% Imperial Stout</p>
-				</li>
-			</ul>
+			<tap-list></tap-list>
 		</div>
 	</section>
-
 </main>
 </template>
+
+<script>
+	import TapList from '~/components/tap-list/tap-list';
+
+	export default {
+		components: { TapList },
+	}
+</script>
 
 <style>
 .para-group {

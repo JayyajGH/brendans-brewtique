@@ -25,6 +25,7 @@ export default {
   plugins: [
   ],
   modules: [
+    '@nuxtjs/axios'
   ],
   build: {
     extend(config, ctx) {
