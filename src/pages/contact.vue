@@ -68,66 +68,65 @@
 </script>
 
 <style>
+  .newsletter__link {
+    color: var(--orange-dark);
+  }
 
-.newsletter__link {
-  color: var(--orange-dark);
-}
+  .newsletter__link:hover {
+    text-decoration: underline;
+  }
 
-.newsletter__link:hover {
-  text-decoration: underline;
-}
+  .contact__link {
+    color: var(--orange-dark);
+  }
 
-.contact__link {
-  color: var(--orange-dark);
-}
+  .contact__link:hover {
+    text-decoration: underline;
+  }
 
-.contact__link:hover {
-  text-decoration: underline;
-}
+  .contact__details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-.contact__details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.contact-details__map {
-  width: 100%;
-  padding: 10px;
-}
-
-@media (min-width: 50em) {
   .contact-details__map {
-    width: 50%;
+    width: 100%;
+    padding: 10px;
   }
-}
 
-.contact-details__info {
-  width: 100%;
-}
-
-@media (min-width: 50em) {
-  .contact-details__info {
-    width: 50%;
+  @media (min-width: 50em) {
+    .contact-details__map {
+      width: 50%;
+    }
   }
-}
 
-.contact__section {
-  padding: 10px;
-}
-
-.map {
-  width: 100%;
-  height: 350px;
-}
-
-@media (min-width: 50em) {
   .map {
-    height: 400px;
+    width: 100%;
+    height: 350px;
   }
-}
 
-.opening__day {
-  padding-right: 10px;
-}
+  @media (min-width: 50em) {
+    .map {
+      height: 400px;
+    }
+  }
+
+  .contact-details__info {
+    width: 100%;
+  }
+
+  @media (min-width: 50em) {
+    .contact-details__info {
+      width: 50%;
+    }
+  }
+
+  .contact__section {
+    padding: 10px;
+  }
+
+  .opening__day {
+    padding-right: 10px;
+  }
 </style>
