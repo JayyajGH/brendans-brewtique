@@ -26,6 +26,7 @@
       }
       catch(error) {
         console.log('Failed to get the taplist details');
+        console.log(error);
       }
     }
   }
