@@ -156,4 +156,12 @@
     background: url('~assets/images/untappd-logo.svg');
     background-size: contain;
   }
+
+  .content-item__anchor {
+    color: var(--grey-dark);
+  }
+
+  .content-item__anchor:hover {
+    text-decoration: underline;
+  }
 </style>
