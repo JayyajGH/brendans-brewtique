@@ -8,7 +8,7 @@
       </p>
     </li>
   </ul>
-  <p v-else>No details available</p>
+  <p v-else>No details currently available.</p>
 </template>
 
 <script>
