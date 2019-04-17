@@ -1,26 +1,14 @@
 <template>
-  <ul>
-    <li class="u-margin-bottom--medium">
-      <h3 class="heading3">Umbral Abyss by Vibrant Forest</h3>
-      <p>11.5% Imperial Coffee Stout</p>
-    </li>
-    <li class="u-margin-bottom--medium">
-      <h3 class="heading3">Steading rolling man by Deya</h3>
-      <p>5.2% American Pale Ale</p>
-    </li>
-    <li class="u-margin-bottom--medium">
-      <h3 class="heading3">Even sharks need water by Verdant Brewing Co</h3>
-      <p>6.5% New England IPA</p>
-    </li>
-    <li class="u-margin-bottom--medium">
-      <h3 class="heading3">Fields Forever by Tiny Rebel</h3>
-      <p>6.5% New England IPA</p>
-    </li>
-    <li class="u-margin-bottom--medium">
-      <h3 class="heading3">Yellow Belly by Buxton Brewery</h3>
-      <p>11% Imperial Stout</p>
+  <ul v-if="tapList && tapList.length">
+    <li v-for="item in tapList" class="u-margin-bottom--medium">
+      <h3 class="heading3">{{item.beverageName}} by {{item.breweryName}}</h3>
+      <p>
+        <span v-if="item.ABV !=='Unknown'">{{item.ABV}}</span>
+        <span v-if="item.beverageStyle !== 'Unknown'">{{item.beverageStyle}}</span>
+      </p>
     </li>
   </ul>
+  <p v-else>No details available</p>
 </template>
 
 <script>
@@ -33,7 +21,8 @@
     },
     async created() {
       try {
-        this.tapList = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
+        const tapListDetails = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
+        this.tapList = tapListDetails.taplistDetails.beverageList;
       }
       catch(error) {
         console.log('Failed to get the taplist details');
