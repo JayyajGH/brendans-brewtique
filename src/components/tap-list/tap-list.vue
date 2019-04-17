@@ -22,7 +22,9 @@
     async created() {
       try {
         const tapListDetails = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
-        this.tapList = tapListDetails.taplistDetails.beverageList;
+        if (tapListDetails && tapListDetails.tapListDetails && tapListDetails.tapListDetails.beverageList) {
+          this.tapList = tapListDetails.taplistDetails.beverageList;
+        }
       }
       catch(error) {
         console.log('Failed to get the taplist details');
