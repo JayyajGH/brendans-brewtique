@@ -23,7 +23,8 @@ export default {
   loading: { color: '#fff' },
   srcDir: 'src/',
   css: [
-    '@/assets/css/normalize.css'
+    '@/assets/css/normalize.css',
+    '@/assets/css/global.scss'
   ],
   plugins: [
   ],
