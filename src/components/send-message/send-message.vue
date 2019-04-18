@@ -8,21 +8,24 @@
       <div class="u-margin-bottom--medium">
         <label for="name">Name</label>
         <div>
-          <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required v-model="contactName">
+          <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required aria-required="true" v-model="contactName">
+          <div v-if="contactNameError" class="form-field__error">{{contactNameError}}</div>
         </div>
       </div>
 
       <div class="u-margin-bottom--medium">
         <label for="email">Email</label>
         <div>
-          <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required v-model="contactEmail">
+          <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required aria-required="true" v-model="contactEmail">
+          <div v-if="contactEmailError" class="form-field__error">{{contactEmailError}}</div>
         </div>
       </div>
 
       <div class="u-margin-bottom--medium">
         <label for="message">Message</label>
         <div>
-          <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required v-model="contactMessage"></textarea>
+          <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required aria-required="true" v-model="contactMessage"></textarea>
+          <div v-if="contactMessageError" class="form-field__error">{{contactMessageError}}</div>
         </div>
       </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
@@ -41,27 +44,55 @@
     data() {
       return {
         contactName: '',
-        contactEmail: '',
-        contactMessage: ''
+        contactNameError: '',
+        contactEmailError: '',
+        emailError: '',
+        contactMessage: '',
+        contactMessageError: ''
       }
     },
     methods: {
-      async sendContactMessage() {
-        try {
-          const message = {
-              contactFromName: this.contactName,
-              contactFromAddress: this.contactEmail,
-              subject: 'Website contact request',
-              message: this.contactMessage
-          };
+      formValid() {
+        var formValid = true;
+        this.contactNameError = '';
+        this.contactEmailError = '';
+        this.contactMessageError = '';
 
-          const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
-
-          document.getElementById('js-contact-form').style.display = 'none';
-          document.getElementById('js-contact-thankyou').style.display = 'block';
+        if (!this.contactName) {
+          this.contactNameError = "Please enter your name"
+          formValid = false;
         }
-        catch (error) {
-          console.log(error);
+
+        if (!this.contactEmail || !this.contactEmail.includes('@') || !this.contactEmail.includes('.') ) {
+          this.contactEmailError = "Please enter a valid email address"
+          formValid = false;
+        }
+
+        if (!this.contactMessage) {
+          this.contactMessageError = "Please enter a message"
+          formValid = false;
+        }
+
+        return formValid;
+      },
+      async sendContactMessage() {
+        const message = {
+            contactFromName: this.contactName,
+            contactFromAddress: this.contactEmail,
+            subject: 'Website contact request',
+            message: this.contactMessage
+        };
+
+        if (this.formValid()) {
+          try {
+            const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
+
+            document.getElementById('js-contact-form').style.display = 'none';
+            document.getElementById('js-contact-thankyou').style.display = 'block';
+          }
+          catch (error) {
+            console.log(error);
+          }
         }
       }
     }
@@ -92,5 +123,9 @@
     background-color: var(--grey-base);
     color: var(--white);
     padding: 20px;
+  }
+
+  .form-field__error {
+    color: red;
   }
 </style>
