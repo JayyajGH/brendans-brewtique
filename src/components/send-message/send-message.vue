@@ -39,10 +39,24 @@
   export default {
     name: 'SendMessage',
     methods: {
-      sendContactMessage() {
+      async sendContactMessage() {
+        try {
+          const message = {
+              contactFromName: 'Bob Beer',
+              contactFromAddress: 'bob@beer.com',
+              subject: 'Website contact request',
+              message: 'Please talk to me about beer'
+          };
+
+          const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
+        }
+        catch (error) {
+          console.log(error);
+        }
+
         document.getElementById('js-contact-form').style.display = 'none';
         document.getElementById('js-contact-thankyou').style.display = 'block';
-        // https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/dev
+
       }
     }
   }
