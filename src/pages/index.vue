@@ -2,7 +2,11 @@
 	<main class="wrapper" id="main">
 	<section>
 			<h1 class="heading1 heading--dark">
-				<span class="heading--item">TAPROOM</span><span class="heading--spacer">.</span><span class="heading--item">BOTTLESHOP</span><span class="heading--spacer">.</span><span class="heading--item">EVENTS</span>
+				<span class="heading--item">TAPROOM</span>
+				<span class="heading--spacer">.</span>
+				<span class="heading--item">BOTTLESHOP</span>
+				<span class="heading--spacer">.</span>
+				<span class="heading--item">EVENTS</span>
 			</h1>
 			<div class="para-group u-align--center">
 				<p class="u-margin-bottom--medium">
