@@ -8,21 +8,21 @@
       <div class="u-margin-bottom--medium">
         <label for="name">Name</label>
         <div>
-          <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required>
+          <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required v-model="contactName">
         </div>
       </div>
 
       <div class="u-margin-bottom--medium">
         <label for="email">Email</label>
         <div>
-          <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required>
+          <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required v-model="contactEmail">
         </div>
       </div>
 
       <div class="u-margin-bottom--medium">
         <label for="message">Message</label>
         <div>
-          <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required></textarea>
+          <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required v-model="contactMessage"></textarea>
         </div>
       </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
@@ -38,25 +38,31 @@
 <script>
   export default {
     name: 'SendMessage',
+    data() {
+      return {
+        contactName: '',
+        contactEmail: '',
+        contactMessage: ''
+      }
+    },
     methods: {
       async sendContactMessage() {
         try {
           const message = {
-              contactFromName: 'Bob Beer',
-              contactFromAddress: 'bob@beer.com',
+              contactFromName: this.contactName,
+              contactFromAddress: this.contactEmail,
               subject: 'Website contact request',
-              message: 'Please talk to me about beer'
+              message: this.contactMessage
           };
 
-          const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
+          const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
+
+          document.getElementById('js-contact-form').style.display = 'none';
+          document.getElementById('js-contact-thankyou').style.display = 'block';
         }
         catch (error) {
           console.log(error);
         }
-
-        document.getElementById('js-contact-form').style.display = 'none';
-        document.getElementById('js-contact-thankyou').style.display = 'block';
-
       }
     }
   }
