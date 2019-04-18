@@ -8,7 +8,7 @@
 				<span class="heading--spacer">.</span>
 				<span class="heading--item">EVENTS</span>
 			</h1>
-			<div class="para-group u-align--center">
+			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
 					Brendan's Brewtique is the culmination of our never ending search for great beer.
 				</p>
@@ -68,20 +68,19 @@
 </script>
 
 <style>
-.para-group {
+.wrapper--small {
   padding-left: 10px;
   padding-right: 10px;
-  max-width: 600px;
   margin: 0 auto;
 }
 
 @media (min-width: 50em) {
-  .para-group {
+  .wrapper--small {
+		max-width: 600px;
     padding-left: 0;
     padding-right: 0;
   }
 }
-
 
 .heading--item {
   padding-left: 10px;
