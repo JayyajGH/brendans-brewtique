@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form id="js-contact-form" class="contact__form">
+    <form id="js-contact-form" class="contact__form" novalidate="true">
       <fieldset>
           <legend><h2 class="heading2">Send us a message</h2></legend>
       </fieldset>
@@ -9,7 +9,7 @@
         <label for="name">Name</label>
         <div>
           <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required aria-required="true" v-model="contactName">
-          <div v-if="contactNameError" class="form-field__error">{{contactNameError}}</div>
+          <div v-if="errors.contactNameError" class="form-field__error">{{errors.contactNameError}}</div>
         </div>
       </div>
 
@@ -17,7 +17,7 @@
         <label for="email">Email</label>
         <div>
           <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required aria-required="true" v-model="contactEmail">
-          <div v-if="contactEmailError" class="form-field__error">{{contactEmailError}}</div>
+          <div v-if="errors.contactEmailError" class="form-field__error">{{errors.contactEmailError}}</div>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
         <label for="message">Message</label>
         <div>
           <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required aria-required="true" v-model="contactMessage"></textarea>
-          <div v-if="contactMessageError" class="form-field__error">{{contactMessageError}}</div>
+          <div v-if="errors.contactMessageError" class="form-field__error">{{errors.contactMessageError}}</div>
         </div>
       </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
@@ -44,32 +44,34 @@
     data() {
       return {
         contactName: '',
-        contactNameError: '',
-        contactEmailError: '',
         emailError: '',
         contactMessage: '',
-        contactMessageError: ''
+        errors: {
+          contactNameError: '',
+          contactEmailError: '',
+          contactMessageError: ''
+        }
       }
     },
     methods: {
       formValid() {
         var formValid = true;
-        this.contactNameError = '';
-        this.contactEmailError = '';
-        this.contactMessageError = '';
+        this.errors.contactNameError = '';
+        this.errors.contactEmailError = '';
+        this.errors.contactMessageError = '';
 
         if (!this.contactName) {
-          this.contactNameError = "Please enter your name"
+          this.errors.contactNameError = "Please enter your name"
           formValid = false;
         }
 
         if (!this.contactEmail || !this.contactEmail.includes('@') || !this.contactEmail.includes('.') ) {
-          this.contactEmailError = "Please enter a valid email address"
+          this.errors.contactEmailError = "Please enter a valid email address"
           formValid = false;
         }
 
         if (!this.contactMessage) {
-          this.contactMessageError = "Please enter a message"
+          this.errors.contactMessageError = "Please enter a message"
           formValid = false;
         }
 
