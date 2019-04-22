@@ -35,6 +35,11 @@ body {
   color: var(--grey-base);
 }
 
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
 .heading1 {
   font-size: 1.3rem;
   margin-bottom: 2rem;
