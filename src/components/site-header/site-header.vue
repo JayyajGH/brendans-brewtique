@@ -9,9 +9,9 @@
       </a>
       <ul class="site-nav__menu">
         <li class="site-nav__item site-nav__item--home"><a class="site-nav__link body--bold-light" href="/">Home</a></li>
-        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="#about">About</a></li>
-        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="#ontap">On Tap</a></li>
-        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="#events">Events</a></li>
+        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="/#about">About</a></li>
+        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="/#ontap">On Tap</a></li>
+        <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="/#events">Events</a></li>
         <li class="site-nav__item"><router-link to="/contact" class="site-nav__link body--bold-light">Contact</router-link></li>
       </ul>
     </nav>
