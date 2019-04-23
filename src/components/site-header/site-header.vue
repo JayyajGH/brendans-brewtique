@@ -4,7 +4,7 @@
     <a href="#main" class="u-hidden-visually">Skip to main content</a>
 
     <nav class="site-nav">
-      <a href="/">
+      <a href="/" title="Brendan's Brewtique">
         <img src="~/assets/images/brendans-brewtique.svg" class="logo" alt="Brendan's Brewtique"/>
       </a>
       <ul class="site-nav__menu">
