@@ -5,7 +5,7 @@
 
     <nav class="site-nav">
       <a href="/">
-        <img src="~/assets/images/bbt.svg" class="logo" alt="Brendan's Brewtique"/>
+        <img src="~/assets/images/brendans-brewtique.svg" class="logo" alt="Brendan's Brewtique"/>
       </a>
       <ul class="site-nav__menu">
         <li class="site-nav__item site-nav__item--home"><a class="site-nav__link body--bold-light" href="/">Home</a></li>
