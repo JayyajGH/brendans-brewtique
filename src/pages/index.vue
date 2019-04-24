@@ -10,10 +10,10 @@
 			</h1>
 			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
-					Brendan's Brewtique is the culmination of our never ending search for great beer.
+					Brendan's Brewtique is the culmination of our never ending search for great craft beer and cider.
 				</p>
 				<p class="u-margin-bottom--medium">
-					We stock hundreds of different beers from across the UK, Europe and beyond.
+					We stock hundreds of different craft beers from across the UK, Europe and beyond.
 				</p>
 				<p class="u-margin-bottom--medium">
 					Additionally we have up to 5 different draught beers available at any one time.
