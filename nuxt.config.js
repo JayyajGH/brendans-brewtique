@@ -3,7 +3,7 @@ import pkg from './package'
 export default {
   mode: 'spa',
   head: {
-    titleTemplate: '%sBrendan\'s Brewtique - Beer shop, bottles & taps',
+    titleTemplate: '%sBrendan\'s Brewtique - Craft beer shop, bottles & taps',
     htmlAttrs: {
       lang: 'en-GB',
     },
