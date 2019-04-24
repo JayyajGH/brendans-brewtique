@@ -24,7 +24,7 @@
         <div>
           <input id="email"
                  class="contact__field" :class="{'contact__field--error': errors.contactEmailError}"
-                 type="email" minlength="1" maxlength="50"
+                 type="email" minlength="1" maxlength="100"
                  required aria-required="true"
                  :aria-invalid="errors.contactEmailError ? true : false"
                  :aria-describedBy="errors.contactEmailError ? 'email-error' : false"
@@ -72,6 +72,9 @@
       }
     },
     methods: {
+      isEmailAddressValid() {
+        return (this.contactEmail && this.contactEmail.includes('@') && this.contactEmail.includes('.') );
+      },
       formValid() {
         var formValid = true;
         this.errors.contactNameError = '';
@@ -83,7 +86,7 @@
           formValid = false;
         }
 
-        if (!this.contactEmail || !this.contactEmail.includes('@') || !this.contactEmail.includes('.') ) {
+        if (!this.isEmailAddressValid()) {
           this.errors.contactEmailError = "Please enter a valid email address"
           formValid = false;
         }
