@@ -48,7 +48,7 @@
     </div>
     <section class="contact-details__map u-margin-bottom--large">
       <h2 class="heading2">How to find us</h2>
-      <iframe class="map" src="https://www.google.com/maps?q=104-106+Queens+road%0AClifton%0ABristol%0ABS8+1NF&output=embed&hl=en-GB&z=14" frameborder="0"></iframe>
+      <iframe class="map" src="https://www.google.com/maps?q=104-106+Queens+road%0AClifton%0ABristol%0ABS8+1NF&output=embed&hl=en-GB&z=14" frameborder="0" title="Map of Brendan's Brewtique location"></iframe>
     </section>
   </section>
 
