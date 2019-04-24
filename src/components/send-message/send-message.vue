@@ -134,6 +134,7 @@
     padding: 10px;
     border: 1px solid var(--grey-light);
     width: 100%;
+    border-radius: 2px;
   }
 
   .contact__field--error {
