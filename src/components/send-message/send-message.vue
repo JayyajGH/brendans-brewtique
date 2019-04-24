@@ -8,7 +8,10 @@
       <div class="u-margin-bottom--medium">
         <label for="name">Name</label>
         <div>
-          <input id="name" class="contact__field" type="text" minlength="1" maxlength="20" required aria-required="true" v-model="contactName">
+          <input id="name"
+                 class="contact__field" :class="{'contact__field--error': errors.contactNameError}"
+                 type="text" minlength="1" maxlength="20" required aria-required="true" :aria-invalid="errors.contactNameError ? true : false"
+                 v-model="contactName">
           <div v-if="errors.contactNameError" class="form-field__error">{{errors.contactNameError}}</div>
         </div>
       </div>
@@ -16,7 +19,10 @@
       <div class="u-margin-bottom--medium">
         <label for="email">Email</label>
         <div>
-          <input id="email" class="contact__field" type="email" minlength="1" maxlength="50" required aria-required="true" v-model="contactEmail">
+          <input id="email"
+                 class="contact__field" :class="{'contact__field--error': errors.contactEmailError}"
+                 type="email" minlength="1" maxlength="50" required aria-required="true" :aria-invalid="errors.contactEmailError ? true : false"
+                 v-model="contactEmail">
           <div v-if="errors.contactEmailError" class="form-field__error">{{errors.contactEmailError}}</div>
         </div>
       </div>
@@ -24,7 +30,10 @@
       <div class="u-margin-bottom--medium">
         <label for="message">Message</label>
         <div>
-          <textarea id="message" class="contact__field contact__message" rows="5" cols="20" maxlength="500" required aria-required="true" v-model="contactMessage"></textarea>
+          <textarea id="message"
+                    class="contact__field contact__message"  :class="{'contact__field--error': errors.contactMessageError}"
+                    rows="5" cols="20" maxlength="500" required aria-required="true" :aria-invalid="errors.contactMessageError ? true : false"
+                    v-model="contactMessage"></textarea>
           <div v-if="errors.contactMessageError" class="form-field__error">{{errors.contactMessageError}}</div>
         </div>
       </div>
@@ -114,7 +123,12 @@
 
   .contact__field {
     padding: 10px;
+    border: 1px solid var(--grey-light);
     width: 100%;
+  }
+
+  .contact__field--error {
+    border: 1px solid var(--red);
   }
 
   .contact__message {
