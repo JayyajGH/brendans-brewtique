@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow:
+
+# Sitemap files
+Sitemap: https://brendansbrewtique.co.uk/sitemap.xml
