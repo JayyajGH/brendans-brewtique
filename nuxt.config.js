@@ -4,6 +4,9 @@ export default {
   mode: 'spa',
   head: {
     title: 'Brendan\'s Brewtique - Beer shop, bottles & taps',
+    htmlAttrs: {
+      lang: 'en-GB',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
