@@ -1,7 +1,7 @@
 {
   "name": "brendans-brewtique",
   "version": "1.0.0",
-  "description": "Brendan's Brewtique is a taproom and bottleshop in Bristol. We sell quality beer and cider from the local area and the rest of the world",
+  "description": "Brendan's Brewtique is a taproom and bottleshop in Clifton, Bristol. We sell quality craft beer and cider from the local area and the rest of the world",
   "author": "Jason Harris",
   "private": true,
   "scripts": {
