@@ -63,7 +63,12 @@
   import SendMessage from '~/components/send-message/send-message';
 
   export default {
-    components: { SendMessage }
+    components: { SendMessage },
+    head () {
+      return {
+        title: 'Contact us - '
+      }
+    }
   }
 </script>
 
