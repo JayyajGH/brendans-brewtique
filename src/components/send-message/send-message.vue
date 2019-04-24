@@ -10,9 +10,12 @@
         <div>
           <input id="name"
                  class="contact__field" :class="{'contact__field--error': errors.contactNameError}"
-                 type="text" minlength="1" maxlength="20" required aria-required="true" :aria-invalid="errors.contactNameError ? true : false"
+                 type="text" minlength="1" maxlength="20"
+                 required aria-required="true"
+                 :aria-invalid="errors.contactNameError ? true : false"
+                 :aria-describedBy="errors.contactNameError ? 'name-error' : false"
                  v-model="contactName">
-          <div v-if="errors.contactNameError" class="form-field__error">{{errors.contactNameError}}</div>
+          <div v-if="errors.contactNameError" id="name-error" class="form-field__error">{{errors.contactNameError}}</div>
         </div>
       </div>
 
@@ -21,9 +24,12 @@
         <div>
           <input id="email"
                  class="contact__field" :class="{'contact__field--error': errors.contactEmailError}"
-                 type="email" minlength="1" maxlength="50" required aria-required="true" :aria-invalid="errors.contactEmailError ? true : false"
+                 type="email" minlength="1" maxlength="50"
+                 required aria-required="true"
+                 :aria-invalid="errors.contactEmailError ? true : false"
+                 :aria-describedBy="errors.contactEmailError ? 'email-error' : false"
                  v-model="contactEmail">
-          <div v-if="errors.contactEmailError" class="form-field__error">{{errors.contactEmailError}}</div>
+          <div v-if="errors.contactEmailError" id="email-error" class="form-field__error">{{errors.contactEmailError}}</div>
         </div>
       </div>
 
@@ -32,9 +38,12 @@
         <div>
           <textarea id="message"
                     class="contact__field contact__message"  :class="{'contact__field--error': errors.contactMessageError}"
-                    rows="5" cols="20" maxlength="500" required aria-required="true" :aria-invalid="errors.contactMessageError ? true : false"
+                    rows="5" cols="20" maxlength="500"
+                    required aria-required="true"
+                    :aria-invalid="errors.contactMessageError ? true : false"
+                    :aria-describedBy="errors.contactMessageError ? 'message-error' : false"
                     v-model="contactMessage"></textarea>
-          <div v-if="errors.contactMessageError" class="form-field__error">{{errors.contactMessageError}}</div>
+          <div v-if="errors.contactMessageError" id="message-error" class="form-field__error">{{errors.contactMessageError}}</div>
         </div>
       </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
