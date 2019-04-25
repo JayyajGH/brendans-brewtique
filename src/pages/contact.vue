@@ -72,7 +72,7 @@
   }
 </script>
 
-<style>
+<style scoped lang="scss">
   .newsletter__link {
     color: var(--orange-dark);
   }

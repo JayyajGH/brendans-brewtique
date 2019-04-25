@@ -67,7 +67,7 @@
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
 	.wrapper--small {
 	  padding-left: 10px;
 	  padding-right: 10px;
