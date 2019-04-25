@@ -24,7 +24,7 @@
 
 		<section class="image-text__panel image-text__panel--dark u-margin-bottom--large" id="about">
 			<div class="image-text__image image--brendan"></div>
-			<div class="image-text__text">
+			<div class="image-text__text u-padding--small">
 				<h2 class="heading2 heading--light">About</h2>
 				<p class="u-margin-bottom--medium">
 					Bristol is very fortunate to have some of the best breweries in the country.  Unfortunately, Bristol has had a shortage of places where you can buy beer from breweries across Bristol, the UK, Europe and beyond - all under one roof.
@@ -36,7 +36,7 @@
 		</section>
 
 		<section class="image-text__panel u-margin-bottom--large" id="events">
-			<div class="image-text__text">
+			<div class="image-text__text u-padding--small">
 				<h2 class="heading2 heading--dark">Events</h2>
 				<p class="u-margin-bottom--medium">
 					We regularly hold tasting events with various breweries and beer experts.  In the past we've had events with breweries like Moor and Arbor.
@@ -51,7 +51,7 @@
 
 		<section class="image-text__panel image-text__panel--dark u-margin-bottom--large" id="ontap">
 			<div class="image-text__image image--taps"></div>
-			<div class="image-text__text">
+			<div class="image-text__text u-padding--small">
 				<h2 class="heading2 heading--light">What's on tap?</h2>
 				<tap-list></tap-list>
 			</div>
@@ -104,7 +104,6 @@
 
 	.image-text__text {
 	  width: 100%;
-	  padding: 10px;
 	}
 
 	@media (min-width: 50em) {
