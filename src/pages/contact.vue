@@ -8,14 +8,14 @@
         <address>
           <div class="u-margin-bottom--medium">
             Email:
-            <a href="mailto:beer@brendansbrewtique.co.uk" class="contact__link body--bold">beer@brendansbrewtique.co.uk</a>
+            <a href="mailto:beer@brendansbrewtique.co.uk" class="link body--bold">beer@brendansbrewtique.co.uk</a>
           </div>
           <div class="u-margin-bottom--medium">
             Phone:
-            <a href="tel:+441179831836" class="contact__link body--bold">0117 983 1836</a>
+            <a href="tel:+441179831836" class="link body--bold">0117 983 1836</a>
           </div>
             Visit:
-            <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="contact__link body--bold">104-106 Queens Rd, Bristol BS8 1NF</a>
+            <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="link body--bold">104-106 Queens Rd, Bristol BS8 1NF</a>
         </address>
       </section>
       <section class="contact__section u-margin-bottom--large">
@@ -42,7 +42,7 @@
       <section class="contact__section u-margin-bottom--large">
         <h2 class="heading2">Stay in touch</h2>
         <p>
-          Sign up to our monthly newsletter by clicking <a href="https://brendansbrewtique.us19.list-manage.com/subscribe?u=704d66e0eb5901577a660513a&id=35a1020e2a" target="_blank" rel="noopener noreferrer" class="newsletter__link body--bold">here</a>
+          Sign up to our monthly newsletter by clicking <a href="https://brendansbrewtique.us19.list-manage.com/subscribe?u=704d66e0eb5901577a660513a&id=35a1020e2a" target="_blank" rel="noopener noreferrer" class="link body--bold">here</a>
         </p>
       </section>
     </div>
@@ -73,19 +73,11 @@
 </script>
 
 <style scoped lang="scss">
-  .newsletter__link {
+  .link {
     color: var(--orange-dark);
   }
 
-  .newsletter__link:hover {
-    text-decoration: underline;
-  }
-
-  .contact__link {
-    color: var(--orange-dark);
-  }
-
-  .contact__link:hover {
+  .link:hover {
     text-decoration: underline;
   }
 
