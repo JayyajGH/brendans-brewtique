@@ -3,7 +3,7 @@
   <h1 class="heading1 heading--dark">Contact Us</h1>
   <section class="contact__details">
     <div class="contact-details__info">
-      <section class="contact__section u-margin-bottom--large">
+      <section class="u-padding--small u-margin-bottom--large">
         <h2 class="heading2">Say Hi!</h2>
         <address>
           <div class="u-margin-bottom--medium">
@@ -18,7 +18,7 @@
             <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="link body--bold">104-106 Queens Rd, Bristol BS8 1NF</a>
         </address>
       </section>
-      <section class="contact__section u-margin-bottom--large">
+      <section class="u-padding--small u-margin-bottom--large">
         <h2 class="heading2">When can you buy beer?</h2>
         <table>
           <tr>
@@ -39,7 +39,7 @@
           </tr>
         </table>
       </section>
-      <section class="contact__section u-margin-bottom--large">
+      <section class="u-padding--small u-margin-bottom--large">
         <h2 class="heading2">Stay in touch</h2>
         <p>
           Sign up to our monthly newsletter by clicking <a href="https://brendansbrewtique.us19.list-manage.com/subscribe?u=704d66e0eb5901577a660513a&id=35a1020e2a" target="_blank" rel="noopener noreferrer" class="link body--bold">here</a>
@@ -52,7 +52,7 @@
     </section>
   </section>
 
-  <section class="contact__section u-margin-bottom--large">
+  <section class="u-padding--small u-margin-bottom--large">
     <send-message></send-message>
   </section>
 
@@ -117,10 +117,6 @@
     .contact-details__info {
       width: 50%;
     }
-  }
-
-  .contact__section {
-    padding: 10px;
   }
 
   .opening__day {
