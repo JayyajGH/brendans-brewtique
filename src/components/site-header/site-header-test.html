@@ -1,0 +1,31 @@
+
+<!--
+NB: This test component currently isn't working.  There is an issue with running it locally due to CORS
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My App</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <site-header></site-header>
+    </div>
+
+    <script type="module">
+      let app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Vue is working!'
+        }
+      })
+
+      import ContactNumber from './site-header.vue';
+    </script>
+  </body>
+</html>

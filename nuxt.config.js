@@ -25,6 +25,7 @@ export default {
   },
   loading: { color: '#fff' },
   srcDir: 'src/',
+  ignore: ['**/*.test.*', '**/*.spec.*'],
   css: [
     '@/assets/css/normalize.css',
     '@/assets/css/global.scss'
@@ -38,4 +39,4 @@ export default {
     extend(config, ctx) {
     }
   }
-}
+};
