@@ -2,11 +2,11 @@
 	<main class="wrapper" id="main">
 		<section>
 			<h1 class="heading1 heading--dark">
-				<span class="heading--item">TAPROOM</span>
-				<span class="heading--spacer">.</span>
-				<span class="heading--item">BOTTLESHOP</span>
-				<span class="heading--spacer">.</span>
-				<span class="heading--item">EVENTS</span>
+				<span class="heading__item">TAPROOM</span>
+				<span class="heading__spacer">.</span>
+				<span class="heading__item">BOTTLESHOP</span>
+				<span class="heading__spacer">.</span>
+				<span class="heading__item">EVENTS</span>
 			</h1>
 			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
@@ -82,12 +82,12 @@
 	  }
 	}
 
-	.heading--item {
+	.heading__item {
 	  padding-left: 10px;
 	  padding-right: 10px;
 	}
 
-	.heading--spacer {
+	.heading__spacer {
 	  vertical-align: text-top;
 	}
 
