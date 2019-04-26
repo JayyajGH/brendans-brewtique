@@ -4,9 +4,9 @@
       <h2 class="heading2 heading--dark">Contact Us</h2>
       <address>
         <ul>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="mailto:beer@brendansbrewtique.co.uk">beer@brendansbrewtique.co.uk</a></li>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="tel:+441179831836">0117 983 1836</a></li>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Rd, Bristol BS8 1NF</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="mailto:beer@brendansbrewtique.co.uk">beer@brendansbrewtique.co.uk</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="tel:+441179831836">0117 983 1836</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Rd, Bristol BS8 1NF</a></li>
         </ul>
       </address>
     </div>
@@ -23,7 +23,7 @@
     </div>
     <div class="footer__backtotop u-align--center">
       <a href="#header" class="backtotop__icon">
-        <span class="backtotop__text">Top</span>
+        <span class="backtotop__text small-text">Top</span>
       </a>
     </div>
 
@@ -42,11 +42,11 @@
 
 <style scoped lang="scss">
   .footer {
-    background-color: var(--grey-light);
-    color: var(--black);
-    padding: 2rem 1rem 2rem 1rem;
     display: flex;
     flex-wrap: wrap;
+    padding: 2rem 1rem 2rem 1rem;
+    background-color: var(--grey-light);
+    color: var(--black);
   }
 
   @media (min-width: 50em) {
@@ -65,7 +65,6 @@
       width: 60%;
     }
   }
-
 
   .footer__social {
     width: 100%;
@@ -92,7 +91,6 @@
   }
 
   .backtotop__text {
-    font-size: 0.8rem;
     display: block;
     position: relative;
     top: 23px;
@@ -116,18 +114,6 @@
   .footer__copyright {
     width: 100%;
     color: var(--grey-dark);
-  }
-
-  /* Style all font awesome icons */
-  .fa--social {
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .fa--social:hover {
-    opacity: 0.7;
   }
 
   .social__logo {
@@ -157,11 +143,11 @@
     background-size: contain;
   }
 
-  .content-item__anchor {
+  .contact-item__anchor {
     color: var(--grey-dark);
   }
 
-  .content-item__anchor:hover {
+  .contact-item__anchor:hover {
     text-decoration: underline;
   }
 </style>

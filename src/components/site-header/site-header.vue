@@ -5,7 +5,7 @@
 
     <nav class="site-nav">
       <a href="/" title="Brendan's Brewtique">
-        <img src="~/assets/images/brendans-brewtique.svg" class="logo" alt="Brendan's Brewtique"/>
+        <img src="~/assets/images/brendans-brewtique.svg" class="logo u-padding--small" alt="Brendan's Brewtique"/>
       </a>
       <ul class="site-nav__menu">
         <li class="site-nav__item site-nav__item--home"><a class="site-nav__link body--bold-light" href="/">Home</a></li>
@@ -28,17 +28,16 @@
 
 <style scoped lang="scss">
   .logo {
-    width: 90px;
     position: absolute;
+    width: 90px;
     border-radius: 3px;
-    padding: 5px;
     background-color: var(--white);
   }
 
   .site-nav {
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px 10px 15px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
   .site-nav__menu {
@@ -47,12 +46,12 @@
   }
 
   .site-nav__item {
-    padding-left: 10px;
+    padding-left: 0.5rem;
   }
 
   @media (min-width: 50em) {
     .site-nav__item {
-      padding-left: 20px;
+      padding-left: 1rem;
     }
   }
 

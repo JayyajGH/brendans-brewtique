@@ -9,7 +9,7 @@
         <label for="name">Name</label>
         <div>
           <input id="name"
-                 class="contact__field" :class="{'contact__field--error': errors.contactNameError}"
+                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactNameError}"
                  type="text" minlength="1" maxlength="20"
                  required aria-required="true"
                  :aria-invalid="errors.contactNameError ? true : false"
@@ -23,7 +23,7 @@
         <label for="email">Email</label>
         <div>
           <input id="email"
-                 class="contact__field" :class="{'contact__field--error': errors.contactEmailError}"
+                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactEmailError}"
                  type="email" minlength="1" maxlength="100"
                  required aria-required="true"
                  :aria-invalid="errors.contactEmailError ? true : false"
@@ -37,7 +37,7 @@
         <label for="message">Message</label>
         <div>
           <textarea id="message"
-                    class="contact__field contact__message"  :class="{'contact__field--error': errors.contactMessageError}"
+                    class="contact__field contact__message u-padding--small"  :class="{'contact__field--error': errors.contactMessageError}"
                     rows="5" cols="20" maxlength="500"
                     required aria-required="true"
                     :aria-invalid="errors.contactMessageError ? true : false"
@@ -50,7 +50,7 @@
   <!--TODO: Add google recapture v3 to protect form -->
   <!--TODO: Add honeypot field -->
     </form>
-    <div id="js-contact-thankyou" class="contact__thankyou u-align--center" style="display: none">
+    <div id="js-contact-thankyou" class="contact__thankyou u-align--center u-padding--medium" style="display: none">
       Thank you for your message.  We'll be in touch shortly
     </div>
   </div>
@@ -62,7 +62,7 @@
     data() {
       return {
         contactName: '',
-        emailError: '',
+        contactEmail: '',
         contactMessage: '',
         errors: {
           contactNameError: '',
@@ -134,7 +134,6 @@
   }
 
   .contact__field {
-    padding: 10px;
     border: 1px solid var(--grey-light);
     width: 100%;
     border-radius: 2px;
@@ -151,10 +150,9 @@
   .contact__thankyou {
     background-color: var(--grey-base);
     color: var(--white);
-    padding: 20px;
   }
 
   .form-field__error {
-    color: red;
+    color: var(--red);
   }
 </style>
