@@ -95,14 +95,6 @@
 </script>
 
 <style scoped lang="scss">
-  .link {
-    color: var(--orange-dark);
-  }
-
-  .link:hover {
-    text-decoration: underline;
-  }
-
   .contact__details {
     display: flex;
     flex-wrap: wrap;

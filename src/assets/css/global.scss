@@ -170,3 +170,11 @@ input, textarea {
 .button-full-width {
   width: 100%;
 }
+
+.link {
+  color: var(--orange-dark);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
