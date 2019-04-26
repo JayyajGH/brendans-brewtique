@@ -153,6 +153,6 @@
   }
 
   .form-field__error {
-    color: red;
+    color: var(--red);
   }
 </style>
