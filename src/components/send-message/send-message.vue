@@ -47,6 +47,11 @@
         </div>
       </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
+      <div class="small-text">
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+      </div>
   <!--TODO: Add google recapture v3 to protect form -->
   <!--TODO: Add honeypot field -->
     </form>
@@ -98,20 +103,33 @@
 
         return formValid;
       },
-      async sendContactMessage() {
+      sendContactMessage() {
         const message = {
             contactFromName: this.contactName,
             contactFromAddress: this.contactEmail,
             subject: 'Website contact request',
             message: this.contactMessage
         };
+        let that = this;
 
         if (this.formValid()) {
           try {
-            const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26', {action: 'contact_request'}).then(function(token) {
 
-            document.getElementById('js-contact-form').style.display = 'none';
-            document.getElementById('js-contact-thankyou').style.display = 'block';
+                  that.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message)
+                    .then(function (response) {
+                      console.log(response);
+                      document.getElementById('js-contact-form').style.display = 'none';
+                      document.getElementById('js-contact-thankyou').style.display = 'block';
+                    })
+                    .catch(function (error) {
+                      console.log(error);
+                    });
+
+                  //const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
+                });
+            });
           }
           catch (error) {
             console.log(error);
@@ -154,5 +172,11 @@
 
   .form-field__error {
     color: var(--red);
+  }
+</style>
+
+<style>
+  .grecaptcha-badge {
+    visibility: hidden;
   }
 </style>
