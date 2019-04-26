@@ -30,6 +30,9 @@ export default {
     '@/assets/css/normalize.css',
     '@/assets/css/global.scss'
   ],
+  generate: {
+    fallback: "404.html"
+  },
   plugins: [
   ],
   modules: [
