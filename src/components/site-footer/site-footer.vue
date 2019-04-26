@@ -4,9 +4,9 @@
       <h2 class="heading2 heading--dark">Contact Us</h2>
       <address>
         <ul>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="mailto:beer@brendansbrewtique.co.uk">beer@brendansbrewtique.co.uk</a></li>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="tel:+441179831836">0117 983 1836</a></li>
-          <li class="u-margin-bottom--small"><a class="content-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Rd, Bristol BS8 1NF</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="mailto:beer@brendansbrewtique.co.uk">beer@brendansbrewtique.co.uk</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="tel:+441179831836">0117 983 1836</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Rd, Bristol BS8 1NF</a></li>
         </ul>
       </address>
     </div>
@@ -116,18 +116,6 @@
     color: var(--grey-dark);
   }
 
-  /* Style all font awesome icons */
-  .fa--social {
-    font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-
-  .fa--social:hover {
-    opacity: 0.7;
-  }
-
   .social__logo {
     display: inline-block;
     width: 30px;
@@ -155,11 +143,11 @@
     background-size: contain;
   }
 
-  .content-item__anchor {
+  .contact-item__anchor {
     color: var(--grey-dark);
   }
 
-  .content-item__anchor:hover {
+  .contact-item__anchor:hover {
     text-decoration: underline;
   }
 </style>
