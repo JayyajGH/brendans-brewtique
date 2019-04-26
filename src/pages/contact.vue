@@ -66,7 +66,29 @@
     components: { SendMessage },
     head () {
       return {
-        title: 'Contact us - '
+        title: 'Contact us - '/*,
+        meta: [
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: 'Contact us - Brendan\'s Brewtique - Craft beer shop, bottles & taps - Clifton, Bristol'
+          },
+          {
+            hid: 'og:url',
+            property: 'og:url',
+            content: 'https://brendansbrewtique.co.uk'
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: '~assets/images/masthead.jpg'  ??????
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: 'Brendan\'s Brewtique is a taproom and bottleshop in Clifton, Bristol. We sell quality craft beer and cider from the local area and the rest of the world'
+          }
+        ]*/
       }
     }
   }
