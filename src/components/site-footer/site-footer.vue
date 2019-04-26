@@ -23,7 +23,7 @@
     </div>
     <div class="footer__backtotop u-align--center">
       <a href="#header" class="backtotop__icon">
-        <span class="backtotop__text">Top</span>
+        <span class="backtotop__text small-text">Top</span>
       </a>
     </div>
 
@@ -42,11 +42,11 @@
 
 <style scoped lang="scss">
   .footer {
-    background-color: var(--grey-light);
-    color: var(--black);
-    padding: 2rem 1rem 2rem 1rem;
     display: flex;
     flex-wrap: wrap;
+    padding: 2rem 1rem 2rem 1rem;
+    background-color: var(--grey-light);
+    color: var(--black);
   }
 
   @media (min-width: 50em) {
@@ -65,7 +65,6 @@
       width: 60%;
     }
   }
-
 
   .footer__social {
     width: 100%;
@@ -92,7 +91,6 @@
   }
 
   .backtotop__text {
-    font-size: 0.8rem;
     display: block;
     position: relative;
     top: 23px;

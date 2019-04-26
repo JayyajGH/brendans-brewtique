@@ -73,6 +73,11 @@ input, textarea {
 }
 
 .small-text {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.smallest-text {
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
 }
@@ -83,11 +88,6 @@ input, textarea {
 
 .body--bold-light {
   font-weight: 600;
-}
-
-.smallest-text {
-  font-size: 0.6rem;
-  margin-bottom: 0.5rem;
 }
 
 /* Padding */
