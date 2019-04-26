@@ -9,7 +9,7 @@
         <label for="name">Name</label>
         <div>
           <input id="name"
-                 class="contact__field" :class="{'contact__field--error': errors.contactNameError}"
+                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactNameError}"
                  type="text" minlength="1" maxlength="20"
                  required aria-required="true"
                  :aria-invalid="errors.contactNameError ? true : false"
@@ -23,7 +23,7 @@
         <label for="email">Email</label>
         <div>
           <input id="email"
-                 class="contact__field" :class="{'contact__field--error': errors.contactEmailError}"
+                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactEmailError}"
                  type="email" minlength="1" maxlength="100"
                  required aria-required="true"
                  :aria-invalid="errors.contactEmailError ? true : false"
@@ -37,7 +37,7 @@
         <label for="message">Message</label>
         <div>
           <textarea id="message"
-                    class="contact__field contact__message"  :class="{'contact__field--error': errors.contactMessageError}"
+                    class="contact__field contact__message u-padding--small"  :class="{'contact__field--error': errors.contactMessageError}"
                     rows="5" cols="20" maxlength="500"
                     required aria-required="true"
                     :aria-invalid="errors.contactMessageError ? true : false"
@@ -134,7 +134,6 @@
   }
 
   .contact__field {
-    padding: 10px;
     border: 1px solid var(--grey-light);
     width: 100%;
     border-radius: 2px;
