@@ -50,7 +50,7 @@
   <!--TODO: Add google recapture v3 to protect form -->
   <!--TODO: Add honeypot field -->
     </form>
-    <div id="js-contact-thankyou" class="contact__thankyou u-align--center" style="display: none">
+    <div id="js-contact-thankyou" class="contact__thankyou u-align--center u-padding--medium" style="display: none">
       Thank you for your message.  We'll be in touch shortly
     </div>
   </div>
@@ -151,7 +151,6 @@
   .contact__thankyou {
     background-color: var(--grey-base);
     color: var(--white);
-    padding: 20px;
   }
 
   .form-field__error {
