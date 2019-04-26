@@ -62,7 +62,7 @@
     data() {
       return {
         contactName: '',
-        emailError: '',
+        contactEmail: '',
         contactMessage: '',
         errors: {
           contactNameError: '',
