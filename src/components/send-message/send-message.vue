@@ -118,7 +118,7 @@
             contactFromAddress: this.contactEmail,
             subject: 'Website contact request',
             message: this.contactMessage,
-            token: ''
+            recaptchaToken: ''
         };
 
         if (this.formValid()) {
@@ -140,7 +140,7 @@
                 /* Add this to the server */
                 /**************************/
 
-              message.token = recaptchaToken;
+              message.recaptchaToken = recaptchaToken;
 
               await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
 
