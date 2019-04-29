@@ -90,9 +90,6 @@
             content: 'Brendan\'s Brewtique is a taproom and bottleshop in Clifton, Bristol. We sell quality craft beer and cider from the local area and the rest of the world'
           }
         ]*/
-        script: [
-          { type: 'text/javascript', src: 'https://www.google.com/recaptcha/api.js?render=6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26', async: true }
-        ]
       }
     }
   }
