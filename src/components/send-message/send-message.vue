@@ -53,7 +53,6 @@
         <a href="https://policies.google.com/privacy">Privacy Policy</a> and
         <a href="https://policies.google.com/terms">Terms of Service</a> apply.
       </div>
-      <!--TODO: Add honeypot field -->
     </form>
     <div id="js-contact-thankyou" class="contact__thankyou u-align--center u-padding--medium" style="display: none">
       Thank you for your message.  We'll be in touch shortly
