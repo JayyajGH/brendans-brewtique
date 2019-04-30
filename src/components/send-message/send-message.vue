@@ -3,52 +3,56 @@
     <form id="js-contact-form" class="contact__form" novalidate="true">
       <fieldset>
           <legend><h2 class="heading2">Send us a message</h2></legend>
+
+          <div class="u-margin-bottom--medium">
+            <label for="name">Name</label>
+            <div>
+              <input id="name"
+                     class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactNameError}"
+                     type="text" minlength="1" maxlength="20"
+                     required aria-required="true"
+                     :aria-invalid="errors.contactNameError ? true : false"
+                     :aria-describedBy="errors.contactNameError ? 'name-error' : false"
+                     v-model="contactName">
+              <div v-if="errors.contactNameError" id="name-error" class="form-field__error">{{errors.contactNameError}}</div>
+            </div>
+          </div>
+
+          <div class="u-margin-bottom--medium">
+            <label for="email">Email</label>
+            <div>
+              <input id="email"
+                     class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactEmailError}"
+                     type="email" minlength="1" maxlength="100"
+                     required aria-required="true"
+                     :aria-invalid="errors.contactEmailError ? true : false"
+                     :aria-describedBy="errors.contactEmailError ? 'email-error' : false"
+                     v-model="contactEmail">
+              <div v-if="errors.contactEmailError" id="email-error" class="form-field__error">{{errors.contactEmailError}}</div>
+            </div>
+          </div>
+
+          <div class="u-margin-bottom--medium">
+            <label for="message">Message</label>
+            <div>
+              <textarea id="message"
+                        class="contact__field contact__message u-padding--small"  :class="{'contact__field--error': errors.contactMessageError}"
+                        rows="5" cols="20" maxlength="500"
+                        required aria-required="true"
+                        :aria-invalid="errors.contactMessageError ? true : false"
+                        :aria-describedBy="errors.contactMessageError ? 'message-error' : false"
+                        v-model="contactMessage"></textarea>
+              <div v-if="errors.contactMessageError" id="message-error" class="form-field__error">{{errors.contactMessageError}}</div>
+            </div>
+          </div>
       </fieldset>
 
-      <div class="u-margin-bottom--medium">
-        <label for="name">Name</label>
-        <div>
-          <input id="name"
-                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactNameError}"
-                 type="text" minlength="1" maxlength="20"
-                 required aria-required="true"
-                 :aria-invalid="errors.contactNameError ? true : false"
-                 :aria-describedBy="errors.contactNameError ? 'name-error' : false"
-                 v-model="contactName">
-          <div v-if="errors.contactNameError" id="name-error" class="form-field__error">{{errors.contactNameError}}</div>
-        </div>
-      </div>
-
-      <div class="u-margin-bottom--medium">
-        <label for="email">Email</label>
-        <div>
-          <input id="email"
-                 class="contact__field u-padding--small" :class="{'contact__field--error': errors.contactEmailError}"
-                 type="email" minlength="1" maxlength="100"
-                 required aria-required="true"
-                 :aria-invalid="errors.contactEmailError ? true : false"
-                 :aria-describedBy="errors.contactEmailError ? 'email-error' : false"
-                 v-model="contactEmail">
-          <div v-if="errors.contactEmailError" id="email-error" class="form-field__error">{{errors.contactEmailError}}</div>
-        </div>
-      </div>
-
-      <div class="u-margin-bottom--medium">
-        <label for="message">Message</label>
-        <div>
-          <textarea id="message"
-                    class="contact__field contact__message u-padding--small"  :class="{'contact__field--error': errors.contactMessageError}"
-                    rows="5" cols="20" maxlength="500"
-                    required aria-required="true"
-                    :aria-invalid="errors.contactMessageError ? true : false"
-                    :aria-describedBy="errors.contactMessageError ? 'message-error' : false"
-                    v-model="contactMessage"></textarea>
-          <div v-if="errors.contactMessageError" id="message-error" class="form-field__error">{{errors.contactMessageError}}</div>
-        </div>
-      </div>
       <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
-  <!--TODO: Add google recapture v3 to protect form -->
-  <!--TODO: Add honeypot field -->
+      <div class="small-text">
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+      </div>
     </form>
     <div id="js-contact-thankyou" class="contact__thankyou u-align--center u-padding--medium" style="display: none">
       Thank you for your message.  We'll be in touch shortly
@@ -59,6 +63,13 @@
 <script>
   export default {
     name: 'SendMessage',
+    head () {
+      return {
+        script: [
+          { type: 'text/javascript', src: 'https://www.google.com/recaptcha/api.js?render=6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26', async: true }
+        ]
+      }
+    },
     data() {
       return {
         contactName: '',
@@ -98,24 +109,42 @@
 
         return formValid;
       },
-      async sendContactMessage() {
+      sendContactMessage() {
+        const reCAPTCHASiteKey = '6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26';
+        const reCAPTCHAAction = 'contact_request';
         const message = {
             contactFromName: this.contactName,
             contactFromAddress: this.contactEmail,
             subject: 'Website contact request',
-            message: this.contactMessage
+            message: this.contactMessage,
+            recaptchaToken: ''
         };
 
         if (this.formValid()) {
-          try {
-            const tapListDetails = await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message );
+          // This form uses Google reCAPTCHA to protect the form submission
+          // Check the Google reCAPTCHA library has loaded
+          grecaptcha.ready(async () => {
+            try {
+              // Call Google reCAPTCHA to get a verification token
+              const recaptchaToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
 
-            document.getElementById('js-contact-form').style.display = 'none';
-            document.getElementById('js-contact-thankyou').style.display = 'block';
-          }
-          catch (error) {
-            console.log(error);
-          }
+              // Pass the Google reCAPTCHA verification token into the server so it can be validated
+              message.recaptchaToken = recaptchaToken;
+
+              // Temp debug code - Remove this...
+              console.log(recaptchaToken);
+
+              // Fire the actual contact request message
+              await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
+
+              document.getElementById('js-contact-form').style.display = 'none';
+              document.getElementById('js-contact-thankyou').style.display = 'block';
+            }
+            catch (error) {
+              console.log('An error has occured');
+              console.log(error);
+            }
+          });
         }
       }
     }
@@ -154,5 +183,11 @@
 
   .form-field__error {
     color: var(--red);
+  }
+</style>
+
+<style>
+  .grecaptcha-badge {
+    visibility: hidden;
   }
 </style>

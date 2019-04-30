@@ -62,3 +62,8 @@ input, select {
 address {
   font-style: normal;
 }
+
+/* Clear any iOS default styling */
+input[type="submit"] {
+  -webkit-appearance: none;
+}
