@@ -122,26 +122,20 @@
         };
 
         if (this.formValid()) {
+          // This form uses Google reCAPTCHA to protect the form submission
+          // Check the Google reCAPTCHA library has loaded
           grecaptcha.ready(async () => {
             try {
+              // Call Google reCAPTCHA to get a verification token
               const recaptchaToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
 
-                /**************************/
-                /* Add this to the server */
-                /*
-              console.log('Got token. About to call verify');
-              const verify = await this.$axios.$post('https://www.google.com/recaptcha/api/siteverify', {
-                secret: '6LfSaqAUAAAAAErPSa1g3ak8IzBlfZXJLBCH-8hI',
-                response: recaptchaToken
-              });
-
-              console.log(verify);
-              */
-                /* Add this to the server */
-                /**************************/
-
+              // Pass the Google reCAPTCHA verification token into the server so it can be validated
               message.recaptchaToken = recaptchaToken;
 
+              // Temp debug code - Remove this...
+              console.log(recaptchaToken);
+
+              // Fire the actual contact request message
               await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
 
               document.getElementById('js-contact-form').style.display = 'none';
