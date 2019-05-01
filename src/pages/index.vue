@@ -83,8 +83,8 @@
 	}
 
 	.heading__item {
-	  padding-left: 0.5rem;
-	  padding-right: 0.5rem;
+	  padding-left: 0;
+	  padding-right: 0;
 	}
 
 	@media (min-width: 50em) {
