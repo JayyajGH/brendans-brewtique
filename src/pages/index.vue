@@ -83,8 +83,15 @@
 	}
 
 	.heading__item {
-	  padding-left: 10px;
-	  padding-right: 10px;
+	  padding-left: 0.5rem;
+	  padding-right: 0.5rem;
+	}
+
+	@media (min-width: 50em) {
+		.heading__item {
+		  padding-left: 1rem;
+		  padding-right: 1rem;
+		}
 	}
 
 	.heading__spacer {
