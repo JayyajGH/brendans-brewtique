@@ -4,9 +4,11 @@
     <a href="#main" class="u-hidden-visually">Skip to main content</a>
 
     <nav class="site-nav">
-      <a href="/" title="Brendan's Brewtique">
-        <img src="~/assets/images/brendans-brewtique.svg" class="logo u-padding--small" alt="Brendan's Brewtique"/>
-      </a>
+      <div>
+        <a href="/" class="logo__anchor" title="Brendan's Brewtique">
+          <img src="~/assets/images/brendans-brewtique.svg" class="logo u-padding--small" alt="Brendan's Brewtique"/>
+        </a>
+      </div>
       <ul class="site-nav__menu">
         <li class="site-nav__item site-nav__item--home"><a class="site-nav__link body--bold-light" href="/">Home</a></li>
         <li class="site-nav__item"><a class="site-nav__link body--bold-light" href="/#about">About</a></li>
@@ -27,8 +29,13 @@
 </script>
 
 <style scoped lang="scss">
-  .logo {
+  .logo__anchor {
     position: absolute;
+    line-height: 0;
+    font-size: 0;
+  }
+
+  .logo {
     width: 90px;
     border-radius: 3px;
     background-color: var(--white);
