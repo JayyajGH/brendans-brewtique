@@ -90,7 +90,7 @@
                 "Mo-Th 10:00-19:00",
                 "Sa 11:00-22:00"
               ],
-              "telephone": "(+44) 0117 9831836",
+              "telephone": "+4401179831836",
               "url": "http://www.brendansbrewtique.co.uk",
               "sameAs": [
                 "https://facebook.com/BrendansBrewtique",
