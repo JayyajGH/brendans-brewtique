@@ -70,7 +70,7 @@
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Brendan's Brewtique",
-              "description": "Brendan\'s Brewtique - Craft beer shop, bottles & taps - Clifton, Bristol",
+              "description": "Craft beer shop, bottles & taps - Clifton, Bristol",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Clifton",
