@@ -76,10 +76,11 @@
                 "@type": "PostalAddress",
                 "addressLocality": "Clifton",
                 "addressRegion": "Bristol",
-                "addressCountry": "UK",
+                "addressCountry": "GB",
                 "postalCode": "BS8 1NF",
                 "streetAddress": "104-106 Queens Road"
               },
+							"hasMap": "https://www.google.co.uk/maps/place/Brendans+Brewtique/@51.4581284,-2.6138011,17z/data=!3m1!4b1!4m5!3m4!1s0x48718d7fa7a08a87:0x5e229b2210aa3d69!8m2!3d51.4581284!4d-2.6116124",
               "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": "51.457960",
