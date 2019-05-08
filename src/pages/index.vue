@@ -91,6 +91,7 @@
                 "Sa 11:00-22:00"
               ],
               "telephone": "+4401179831836",
+							"email":"mailto:beer@brendansbrewtique.co.uk",
               "url": "http://www.brendansbrewtique.co.uk",
               "sameAs": [
                 "https://facebook.com/BrendansBrewtique",
