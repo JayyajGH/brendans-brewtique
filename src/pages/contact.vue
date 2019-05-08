@@ -15,7 +15,7 @@
             <a href="tel:+441179831836" class="link body--bold">0117 983 1836</a>
           </div>
             Visit:
-            <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="link body--bold">104-106 Queens Rd, Bristol BS8 1NF</a>
+            <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="link body--bold">104-106 Queens Road, Bristol BS8 1NF</a>
         </address>
       </section>
       <section class="u-padding--small u-margin-bottom--large">
