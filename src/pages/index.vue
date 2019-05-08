@@ -94,7 +94,8 @@
                 "https://facebook.com/BrendansBrewtique",
                 "https://twitter.com/brendansbrewti2",
                 "https://instagram.com/brendansbrewtique",
-                "https://untappd.com/v/brendans-brewtique/8306452" ]
+                "https://untappd.com/v/brendans-brewtique/8306452" ],
+							"priceRange": "£3 - £30"
             }
         }
     },
