@@ -71,6 +71,7 @@
               "@type": "LocalBusiness",
               "name": "Brendan's Brewtique",
               "description": "Craft beer shop, bottles & taps - Clifton, Bristol",
+							"image": "http://brendansbrewtique.s3-website-eu-west-1.amazonaws.com/favicon.ico",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Clifton",
