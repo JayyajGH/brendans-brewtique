@@ -64,6 +64,49 @@
 
 	export default {
 		components: { TapList },
+		data() {
+        return {
+            structuredData: {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Brendan's Brewtique",
+              "description": "Brendan\'s Brewtique - Craft beer shop, bottles & taps - Clifton, Bristol",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Clifton",
+                "addressRegion": "Bristol",
+                "addressCountry": "UK",
+                "postalCode": "BS8 1NF",
+                "streetAddress": "104-106 Queens Road"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "51.457960",
+                "longitude": "-2.611940"
+             	},
+              "openingHours": [
+                "Mo-Th 10:00-19:00",
+                "Sa 11:00-22:00"
+              ],
+              "telephone": "(+44) 0117 9831836",
+              "url": "http://www.brendansbrewtique.co.uk",
+              "sameAs": [
+                "https://facebook.com/BrendansBrewtique",
+                "https://twitter.com/brendansbrewti2",
+                "https://instagram.com/brendansbrewtique",
+                "https://untappd.com/v/brendans-brewtique/8306452" ]
+            }
+        }
+    },
+		head () {
+				return {
+						__dangerouslyDisableSanitizers: ['script'],
+						script: [{
+								innerHTML: JSON.stringify(this.structuredData),
+								type: 'application/ld+json'
+						}]
+				}
+		}
 	}
 </script>
 
