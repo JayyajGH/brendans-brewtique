@@ -6,7 +6,7 @@
         <ul>
           <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="mailto:beer@brendansbrewtique.co.uk">beer@brendansbrewtique.co.uk</a></li>
           <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="tel:+441179831836">0117 983 1836</a></li>
-          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Rd, Bristol BS8 1NF</a></li>
+          <li class="u-margin-bottom--small"><a class="contact-item__anchor" href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer">104-106 Queens Road, Bristol BS8 1NF</a></li>
         </ul>
       </address>
     </div>

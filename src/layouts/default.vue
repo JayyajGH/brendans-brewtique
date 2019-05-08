@@ -11,6 +11,6 @@
   import SiteFooter from '~/components/site-footer/site-footer';
 
   export default {
-    components: { SiteHeader, SiteFooter },
+    components: { SiteHeader, SiteFooter }
   }
 </script>
