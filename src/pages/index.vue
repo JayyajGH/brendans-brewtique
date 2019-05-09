@@ -86,10 +86,35 @@
                 "latitude": "51.457960",
                 "longitude": "-2.611940"
              	},
-              "openingHours": [
-                "Mo-Th 10:00-19:00",
-                "Sa 11:00-22:00"
-              ],
+							"openingHoursSpecification": [
+							  {
+							    "@type": "OpeningHoursSpecification",
+							    "dayOfWeek": [
+							      "Monday",
+							      "Tuesday",
+							      "Wednesday",
+							      "Thursday"
+							    ],
+							    "opens": "10:00",
+							    "closes": "19:00"
+							  },
+							  {
+							    "@type": "OpeningHoursSpecification",
+							    "dayOfWeek": [
+							      "Saturday"
+							    ],
+							    "opens": "11:00",
+							    "closes": "22:00"
+							  },
+								{
+							    "@type": "OpeningHoursSpecification",
+							    "dayOfWeek": [
+							      "Sunday"
+							    ],
+							    "opens": "00:00",
+							    "closes": "00:00"
+							  }
+							],
               "telephone": "+4401179831836",
 							"email":"mailto:beer@brendansbrewtique.co.uk",
               "url": "http://www.brendansbrewtique.co.uk",
