@@ -130,7 +130,42 @@
 								"bestRating": "5",
 								"ratingCount": "4"
 							}
-            }
+            },
+						structuredDataEvent: {
+							"@context": "https://schema.org",
+						  "@type": "Event",
+						  "name": "Belgian beer tasting with Tim Webb",
+						  "startDate": "2019-04-25T19:00",
+						  "endDate": "2019-04-25T22:00",
+						  "location": {
+						    "@type": "Place",
+						    "name": "Brendan's Brewtique",
+						    "address": {
+									"@type": "PostalAddress",
+	                "addressLocality": "Clifton",
+	                "addressRegion": "Bristol",
+	                "addressCountry": "GB",
+	                "postalCode": "BS8 1NF",
+	                "streetAddress": "104-106 Queens Road"
+						    }
+						  },
+						  "offers": {
+						    "@type": "Offer",
+						    "url": "https://www.eventbee.com/v/brewtique/event?eid=168576862#/tickets",
+						    "price": "15",
+						    "priceCurrency": "GBP",
+						    "availability": "https://schema.org/InStock",
+						    "validFrom": "2019-03-20T12:00"
+						  },
+						  "image": [
+						    "https://example.com/photos/1x1/photo.jpg"
+						   ],
+						  "description": "Join us for an evening of Belgian beer tasting with Tim Webb, author of the Good Beer Guide Belgium",
+						  "performer": {
+						    "@type": "PerformingGroup",
+						    "name": "Tim Webb"
+						  }
+						}
         }
     },
 		head () {
@@ -138,6 +173,10 @@
 						__dangerouslyDisableSanitizers: ['script'],
 						script: [{
 								innerHTML: JSON.stringify(this.structuredData),
+								type: 'application/ld+json'
+						},
+						{
+								innerHTML: JSON.stringify(this.structuredDataEvent),
 								type: 'application/ld+json'
 						}]
 				}
