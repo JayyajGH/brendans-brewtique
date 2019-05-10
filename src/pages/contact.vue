@@ -22,16 +22,16 @@
         <h2 class="heading2">When can you buy beer?</h2>
         <table>
           <tr>
-            <td class="opening__day">Mon-Thu</td>
-            <td>10:00-19:00</td>
+            <td class="opening__day">Mon to Thu</td>
+            <td>10:00 to 19:00</td>
           </tr>
           <tr>
             <td class="opening__day">Fri</td>
-            <td>11:00-22:00</td>
+            <td>11:00 to 22:00</td>
           </tr>
           <tr>
             <td class="opening__day">Sat</td>
-            <td>11:00-22:00</td>
+            <td>11:00 to 22:00</td>
           </tr>
           <tr>
             <td class="opening__day">Sun</td>
@@ -42,7 +42,7 @@
       <section class="u-padding--small u-margin-bottom--large">
         <h2 class="heading2">Stay in touch</h2>
         <p>
-          Sign up to our monthly newsletter by clicking <a href="https://brendansbrewtique.us19.list-manage.com/subscribe?u=704d66e0eb5901577a660513a&id=35a1020e2a" target="_blank" rel="noopener noreferrer" class="link body--bold">here</a>
+          <a href="https://brendansbrewtique.us19.list-manage.com/subscribe?u=704d66e0eb5901577a660513a&id=35a1020e2a" target="_blank" rel="noopener noreferrer" class="link body--bold">Sign up to our monthly newsletter</a>
         </p>
       </section>
     </div>
