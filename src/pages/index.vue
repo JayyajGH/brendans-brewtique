@@ -128,7 +128,7 @@
 								"@type": "AggregateRating",
 								"ratingValue": "5",
 								"bestRating": "5",
-								"ratingCount": "4"
+								"ratingCount": "5"
 							}
             },
 						structuredDataEvent: {

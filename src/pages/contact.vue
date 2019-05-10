@@ -8,11 +8,11 @@
         <address>
           <div class="u-margin-bottom--medium">
             Email:
-            <a href="mailto:beer@brendansbrewtique.co.uk" class="link body--bold">beer@brendansbrewtique.co.uk</a>
+            <a href="mailto:beer@brendansbrewtique.co.uk" class="link body--bold" aria-label="">beer@brendansbrewtique.co.uk</a>
           </div>
           <div class="u-margin-bottom--medium">
             Phone:
-            <a href="tel:+441179831836" class="link body--bold">0117 983 1836</a>
+            <a href="tel:+441179831836" class="link body--bold" aria-label="Phone us on 0 1 1 7. 9 8 3. 1 8 3 6">0117 983 1836</a>
           </div>
             Visit:
             <a href="https://goo.gl/maps/5EkRMn5m1p82" target="_blank" rel="noopener noreferrer" class="link body--bold">104-106 Queens Road, Bristol BS8 1NF</a>
