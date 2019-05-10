@@ -17,7 +17,9 @@ export default {
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/android-icon-192x192.png' },
       { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/apple-touch-icon.png' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Sans' } //,
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Sans' }
       //{ rel: 'preload', href: '/images/masthead.jpg', as: 'image', media: '(max-width: 50em)' },
       //{ rel: 'preload', href: '/images/masthead-medium.jpg', as: 'image', media: '(min-width: 50.0625em) and (max-width: 93.6875em)' },
       //{ rel: 'preload', href: '/images/masthead-large.jpg', as: 'image', media: '(min-width: 93.75em)' }
