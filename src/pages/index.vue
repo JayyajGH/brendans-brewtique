@@ -2,14 +2,14 @@
 	<main class="wrapper" id="main">
 		<section>
 			<h1 class="heading--dark u-align--center">
-				<div class="heading1">
+				<span class="heading1 heading__main">
 					<span class="heading__item">TAPROOM</span>
 					<span class="heading__spacer">.</span>
 					<span class="heading__item">BOTTLESHOP</span>
 					<span class="heading__spacer">.</span>
 					<span class="heading__item">EVENTS</span>
-				</div>
-				<div class="heading2">Exploring craft beer in Bristol</div>
+				</span>
+				<span class="heading2 heading__subheading">Exploring craft beer in Bristol</span>
 			</h1>
 			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
@@ -216,6 +216,14 @@
 
 	.heading__spacer {
 	  vertical-align: text-top;
+	}
+
+	.heading__main {
+		display: block;
+	}
+
+	.heading__subheading {
+		display: block;
 	}
 
 	.image-text__panel {
