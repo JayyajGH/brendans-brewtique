@@ -1,12 +1,15 @@
 <template>
 	<main class="wrapper" id="main">
 		<section>
-			<h1 class="heading1 heading--dark">
-				<span class="heading__item">TAPROOM</span>
-				<span class="heading__spacer">.</span>
-				<span class="heading__item">BOTTLESHOP</span>
-				<span class="heading__spacer">.</span>
-				<span class="heading__item">EVENTS</span>
+			<h1 class="heading--dark u-align--center">
+				<div class="heading1">
+					<span class="heading__item">TAPROOM</span>
+					<span class="heading__spacer">.</span>
+					<span class="heading__item">BOTTLESHOP</span>
+					<span class="heading__spacer">.</span>
+					<span class="heading__item">EVENTS</span>
+				</div>
+				<div class="heading2">Exploring craft beer in Bristol</div>
 			</h1>
 			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
