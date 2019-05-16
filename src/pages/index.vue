@@ -9,7 +9,7 @@
 					<span class="heading__spacer">.</span>
 					<span class="heading__item">EVENTS</span>
 				</span>
-				<span class="heading2 heading__subheading">Exploring craft beer in Bristol</span>
+				<span class="heading1 heading__subheading">Exploring craft beer in Bristol</span>
 			</h1>
 			<div class="wrapper--small u-align--center">
 				<p class="u-margin-bottom--medium">
