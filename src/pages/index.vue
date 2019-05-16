@@ -43,9 +43,10 @@
 				<h2 class="heading2 heading--dark">Events</h2>
 				<p class="u-margin-bottom--medium">
 					We regularly hold tasting events with various breweries and beer experts.  In the past we've had events with breweries like Moor and Arbor.
+					We've also had tastings with experts like Tim Webb, the author of the Good Beer Guide Belgium.
 				</p>
 				<p class="u-margin-bottom--medium">
-					Our next event is an introduction to Belgian beer with Tim Webb, author of the Good Beer Guide Belgium, on 25th April 2019.
+					Our next event is a tasting with Cocksure Brewing on 25th April 2019.
 				</p>
 				<a href="https://www.eventbee.com/v/brewtique/event?eid=168576862#/tickets" target="_blank" rel="noopener noreferrer" class="button button--primary body--bold">Book tickets</a>
 			</div>
