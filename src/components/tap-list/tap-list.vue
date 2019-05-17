@@ -21,7 +21,7 @@
     },
     async created() {
       try {
-        const tapListDetails = await this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
+        const tapListDetails = await getTapListDetailsForVenue();
         if (tapListDetails && tapListDetails.taplistDetails && tapListDetails.taplistDetails.beverageList) {
           this.tapList = tapListDetails.taplistDetails.beverageList;
         }
@@ -29,6 +29,11 @@
       catch(error) {
         console.log('Failed to get the taplist details');
         console.log(error);
+      }
+    },
+    methods: {
+      async getTapListDetailsForVenue() {
+        return this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
       }
     }
   }
