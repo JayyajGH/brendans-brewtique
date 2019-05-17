@@ -21,7 +21,7 @@
     },
     async created() {
       try {
-        const tapListDetails = await getTapListDetailsForVenue();
+        const tapListDetails = await this.getTapListDetailsForVenue();
         if (tapListDetails && tapListDetails.taplistDetails && tapListDetails.taplistDetails.beverageList) {
           this.tapList = tapListDetails.taplistDetails.beverageList;
         }
