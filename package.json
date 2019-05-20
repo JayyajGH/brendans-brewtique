@@ -19,6 +19,7 @@
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.29",
     "ava": "^1.4.1",
+    "flush-promises": "^1.0.2",
     "jsdom": "^15.1.0",
     "jsdom-global": "^3.0.2",
     "node-sass": "^4.11.0",
@@ -29,11 +30,11 @@
     "sass-loader": "^7.1.0"
   },
   "ava": {
-      "require": [
-        "./setup.js"
-      ],
-      "files": [
-        "./**/*.spec.js"
-      ]
-    }
+    "require": [
+      "./setup.js"
+    ],
+    "files": [
+      "./**/*.spec.js"
+    ]
+  }
 }
