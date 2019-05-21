@@ -12,6 +12,8 @@
 </template>
 
 <script>
+  import getTapListDetailsForVenue from './repository.js';
+
   export default {
     name: 'TapList',
     data() {
@@ -21,7 +23,7 @@
     },
     async created() {
       try {
-        const tapListDetails = await this.getTapListDetailsForVenue();
+        const tapListDetails = await this.getTapListDetails();
         if (tapListDetails && tapListDetails.taplistDetails && tapListDetails.taplistDetails.beverageList) {
           this.tapList = tapListDetails.taplistDetails.beverageList;
         }
@@ -32,8 +34,8 @@
       }
     },
     methods: {
-      async getTapListDetailsForVenue() {
-        return this.$axios.$get('https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
+      async getTapListDetails() {
+        return getTapListDetailsForVenue(this.$axios);
       }
     }
   }
