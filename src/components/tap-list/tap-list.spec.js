@@ -53,6 +53,7 @@ test('it renders the correct initial markup when taplist details are missing', a
   await flushPromises();
 
   t.true(wrapper.is('p'));
+  t.is(wrapper.find('p').text(), 'No details currently available.');
 });
 
 test('it renders a single list item when there is one beverage in the taplist', async t => {
