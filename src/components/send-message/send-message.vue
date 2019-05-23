@@ -141,7 +141,7 @@
               document.getElementById('js-contact-thankyou').style.display = 'block';
             }
             catch (error) {
-              console.log('An error has occured');
+              console.log('An error has occured when attempting to send the contact request');
               console.log(error);
             }
           });
