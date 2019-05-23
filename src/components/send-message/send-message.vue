@@ -121,6 +121,8 @@
         };
 
         if (this.formValid()) {
+          console.log('Attempting to send a contact message from ' + message.contactFromName);
+
           // This form uses Google reCAPTCHA to protect the form submission
           // Check the Google reCAPTCHA library has loaded
           grecaptcha.ready(async () => {
@@ -172,6 +174,10 @@
     border: 1px solid var(--red);
   }
 
+  .form-field__error {
+    color: var(--red);
+  }
+  
   .contact__message {
     resize: none;
   }
@@ -179,10 +185,6 @@
   .contact__thankyou {
     background-color: var(--grey-base);
     color: var(--white);
-  }
-
-  .form-field__error {
-    color: var(--red);
   }
 </style>
 
