@@ -94,7 +94,7 @@
         this.errors.contactEmailError = '';
         this.errors.contactMessageError = '';
 
-        if (!this.contactName) {
+        if (!this.contactName || !this.contactName.trim()) {
           this.errors.contactNameError = "Please enter your name"
           formValid = false;
         }
