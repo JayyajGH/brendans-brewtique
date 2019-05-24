@@ -24,13 +24,13 @@ test('it renders the correct error messages when missing form data', (t) => {
   t.is(wrapper.findAll('#message-error').length, 1);
 });
 
-test('it correctly validates an email address', (t) => {
+test('it correctly validates a valid email address', (t) => {
   let wrapper = shallowMount(SendMessage);
   wrapper.setData({contactEmail: 'bob.smith@gmail.com'});
   t.true(wrapper.vm.isEmailAddressValid());
 });
 
-test('it correctly detects an invalid email address when component is created', (t) => {
+test('it correctly determines if the email address for a component is initially invalid', (t) => {
   let wrapper = shallowMount(SendMessage);
   t.false(wrapper.vm.isEmailAddressValid());
 });
@@ -48,4 +48,45 @@ test('it correctly detects an invalid email address', (t) => {
 
   wrapper.setData({contactEmail: 'bob@smith'});
   t.false(wrapper.vm.isEmailAddressValid());
+});
+
+test('it correctly sets up component data when detecting an invalid contact name', (t) => {
+  let wrapper = shallowMount(SendMessage);
+
+  wrapper.setData({contactName: ''});
+  t.false(wrapper.vm.formValid());
+  t.is(wrapper.vm.errors.contactNameError, 'Please enter your name');
+
+  wrapper.setData({contactName: ' '});
+  t.false(wrapper.vm.formValid());
+  t.is(wrapper.vm.errors.contactNameError, 'Please enter your name');
+});
+
+test('it correctly sets up component data when detecting an invalid email address', (t) => {
+  let wrapper = shallowMount(SendMessage);
+
+  wrapper.setData({contactEmail: ''});
+  t.false(wrapper.vm.formValid());
+  t.is(wrapper.vm.errors.contactEmailError, 'Please enter a valid email address');
+});
+
+test('it correctly sets up component data when detecting an invalid message', (t) => {
+  let wrapper = shallowMount(SendMessage);
+
+  wrapper.setData({contactMessage: ''});
+  t.false(wrapper.vm.formValid());
+  t.is(wrapper.vm.errors.contactMessageError, 'Please enter a message');
+});
+
+test('it correctly sets up component data when detecting a valid data', (t) => {
+  let wrapper = shallowMount(SendMessage);
+
+  wrapper.setData({contactName: 'Bob Smith'});
+  wrapper.setData({contactEmail: 'bob.smith@gmail.com'});
+  wrapper.setData({contactMessage: 'Test message'});
+
+  t.true(wrapper.vm.formValid());
+  t.is(wrapper.vm.errors.contactNameError, '');
+  t.is(wrapper.vm.errors.contactEmailError, '');
+  t.is(wrapper.vm.errors.contactMessageError, '');
 });
