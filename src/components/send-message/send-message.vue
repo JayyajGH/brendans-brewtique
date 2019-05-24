@@ -132,14 +132,14 @@
           grecaptcha.ready(async () => {
             try {
               // Call Google reCAPTCHA to get a verification token
-              const recaptchaToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
+              message.recaptchaToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
+            }
+            catch (error) {
+              console.log('An error has occured whilst getting the reCAPTCHA verification token');
+              console.log(error);
+            }
 
-              // Pass the Google reCAPTCHA verification token into the server so it can be validated
-              message.recaptchaToken = recaptchaToken;
-
-              // Temp debug code - Remove this...
-              console.log(recaptchaToken);
-
+            try {
               // Fire the actual contact request message
               await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
 
