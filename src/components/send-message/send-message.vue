@@ -109,6 +109,10 @@
 
         return formValid;
       },
+      displaySuccessMessage() {
+        document.getElementById('js-contact-form').style.display = 'none';
+        document.getElementById('js-contact-thankyou').style.display = 'block';
+      },
       sendContactMessage() {
         const reCAPTCHASiteKey = '6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26';
         const reCAPTCHAAction = 'contact_request';
@@ -139,8 +143,7 @@
               // Fire the actual contact request message
               await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
 
-              document.getElementById('js-contact-form').style.display = 'none';
-              document.getElementById('js-contact-thankyou').style.display = 'block';
+              displaySuccessMessage();
             }
             catch (error) {
               console.log('An error has occured when attempting to send the contact request');
@@ -177,7 +180,7 @@
   .form-field__error {
     color: var(--red);
   }
-  
+
   .contact__message {
     resize: none;
   }
