@@ -84,7 +84,9 @@
     },
     methods: {
       isEmailAddressValid() {
-        return (this.contactEmail && this.contactEmail.includes('@') && this.contactEmail.includes('.') );
+        // Convert the contactEmail to a Boolean so this function will always return True or false
+        // Otherwise the lazy evaluation will return an empty string if contactEmail is empty
+        return (Boolean(this.contactEmail) && this.contactEmail.includes('@') && this.contactEmail.includes('.') );
       },
       formValid() {
         var formValid = true;
