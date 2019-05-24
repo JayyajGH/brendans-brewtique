@@ -143,7 +143,7 @@
               // Fire the actual contact request message
               await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
 
-              displaySuccessMessage();
+              this.displaySuccessMessage();
             }
             catch (error) {
               console.log('An error has occured when attempting to send the contact request');
