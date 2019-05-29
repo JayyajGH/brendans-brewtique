@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "ava"
+    "test": "ava",
+    "coverage": "nyc ava"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.4.1",
@@ -24,10 +25,12 @@
     "jsdom-global": "^3.0.2",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
+    "nyc": "^14.1.1",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^3.0.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "sinon": "^7.3.2"
   },
   "ava": {
     "require": [
