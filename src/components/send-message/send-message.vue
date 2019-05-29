@@ -62,6 +62,8 @@
 </template>
 
 <script>
+  import fireContactRequestWithMessage from './repository.js';
+
   export default {
     name: 'SendMessage',
     head () {
@@ -143,9 +145,7 @@
             }
 
             try {
-              // Fire the actual contact request message
-              await this.$axios.$post('https://501n7ggn65.execute-api.eu-west-1.amazonaws.com/prod', message);
-
+              await this.fireContactRequest(message);
               this.displaySuccessMessage();
             }
             catch (error) {
@@ -154,6 +154,9 @@
             }
           });
         }
+      },
+      async fireContactRequest(message) {
+        return fireContactRequestWithMessage(this.$axios, message);
       }
     }
   }
