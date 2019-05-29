@@ -47,7 +47,8 @@
           </div>
       </fieldset>
 
-      <input type="submit" class="button button--primary button-full-width body--bold" value="Send Message" @click.stop.prevent="sendContactMessage" />
+      <button type="button" class="button button--primary button-full-width body--bold" @click="sendContactMessage">Send Message</button>
+
       <div class="small-text">
         This site is protected by reCAPTCHA and the Google
         <a href="https://policies.google.com/privacy">Privacy Policy</a> and
