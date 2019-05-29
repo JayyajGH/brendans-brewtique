@@ -15,7 +15,7 @@ test('it doesn\'t render any error messages on form load', (t) => {
 
 test('it renders the correct error messages when missing form data', (t) => {
   let wrapper = shallowMount(SendMessage);
-  const submitButton = wrapper.find("input[type='submit']");
+  const submitButton = wrapper.find("button[type='button']");
   submitButton.trigger('click');
 
   t.is(wrapper.findAll('.form-field__error').length, 3);
