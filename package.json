@@ -31,6 +31,17 @@
     "sass-loader": "^7.1.0",
     "sinon": "^7.3.2"
   },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "**/*.spec.js",
+      "setup.js"
+    ],
+    "extension": [
+      ".js",
+      ".vue"
+    ]
+  },
   "ava": {
     "require": [
       "./setup.js"
