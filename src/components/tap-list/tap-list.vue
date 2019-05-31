@@ -23,9 +23,9 @@
     },
     async created() {
       try {
-        const tapListDetails = await this.getTapListDetails();
-        if (tapListDetails && tapListDetails.taplistDetails && tapListDetails.taplistDetails.beverageList) {
-          this.tapList = tapListDetails.taplistDetails.beverageList;
+        const {data} = await this.getTapListDetails();
+        if (data && data.taplistDetails && data.taplistDetails.beverageList) {
+          this.tapList = data.taplistDetails.beverageList;
         }
       }
       catch(error) {

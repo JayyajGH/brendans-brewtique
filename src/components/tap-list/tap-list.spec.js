@@ -6,7 +6,7 @@ import TapList from './tap-list';
 const getTapListDetailsFactory = (tapList) => {
   return async function() {
     return {
-      taplistDetails: tapList
+      data: tapList
     };
   }
 }
@@ -23,13 +23,15 @@ test('it renders the correct initial markup when taplist details are present', a
   // Check that the component is at least created in it's most basic sense
 
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: 'Unknown'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: 'Unknown'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -44,7 +46,9 @@ test('it renders the correct initial markup when taplist details are present', a
 test('it renders the correct initial markup when taplist details are missing', async t => {
   // Check that the component is at least created in it's most basic sense
   const tapListDetails = {
-    beverageList: []
+    taplistDetails: {
+      beverageList: []
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -58,13 +62,15 @@ test('it renders the correct initial markup when taplist details are missing', a
 
 test('it renders a single list item when there is one beverage in the taplist', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: 'Unknown'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: 'Unknown'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -78,18 +84,20 @@ test('it renders a single list item when there is one beverage in the taplist', 
 
 test('it renders multiple list items when there are multiple beverages in the taplist', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: '6.5%'
-        },
-        { beverageName: 'Fields Forever',
-          breweryName: 'Tiny Rebel Brewing Co',
-          beverageStyle: 'IPA - New England',
-          ABV: '6.5%'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          },
+          { beverageName: 'Fields Forever',
+            breweryName: 'Tiny Rebel Brewing Co',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -103,13 +111,15 @@ test('it renders multiple list items when there are multiple beverages in the ta
 
 test('it renders ABV and beverage style if they aren\'t unknown', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: '6.5%'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -125,13 +135,15 @@ test('it renders ABV and beverage style if they aren\'t unknown', async t => {
 
 test('it doesn\'t render ABV if it is unknown', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: 'Unknown'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: 'Unknown'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -147,13 +159,15 @@ test('it doesn\'t render ABV if it is unknown', async t => {
 
 test('it doesn\'t render beverage style if it is unknown', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: 'Verdant',
-          beverageStyle: 'Unknown',
-          ABV: '6.5%'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'Unknown',
+            ABV: '6.5%'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -169,13 +183,15 @@ test('it doesn\'t render beverage style if it is unknown', async t => {
 
 test('it renders correctly if there is no brewery name', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: 'Even Sharks Need Water',
-          breweryName: '',
-          beverageStyle: 'IPA - New England',
-          ABV: '6.5%'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: '',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
@@ -190,13 +206,15 @@ test('it renders correctly if there is no brewery name', async t => {
 
 test('it renders correctly if there is no beverage name', async t => {
   const tapListDetails = {
-    beverageList: [
-        { beverageName: '',
-          breweryName: 'Verdant',
-          beverageStyle: 'IPA - New England',
-          ABV: '6.5%'
-        }
-    ]
+    taplistDetails: {
+      beverageList: [
+          { beverageName: '',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          }
+      ]
+    }
   };
 
   let getTapList = getTapListDetailsFactory(tapListDetails);
