@@ -4,13 +4,17 @@ import MockAdapter from 'axios-mock-adapter';
 import getTapListDetailsForVenue from './repository.js';
 
 test('getTapListDetailsForVenue correctly calls the api endpoint to fetch the taplist details', async t => {
-  const responseData = [
-      { beverageName: 'Even Sharks Need Water',
-        breweryName: 'Verdant',
-        beverageStyle: 'IPA - New England',
-        ABV: 'Unknown'
-      }
-  ];
+  const responseData = {
+    taplistDetails: {
+      beverageList: [
+          { beverageName: 'Even Sharks Need Water',
+            breweryName: 'Verdant',
+            beverageStyle: 'IPA - New England',
+            ABV: '6.5%'
+          }
+      ]
+    }
+  };
 
   let mock = new MockAdapter(axios);
 
