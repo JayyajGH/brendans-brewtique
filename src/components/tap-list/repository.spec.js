@@ -33,7 +33,7 @@ test('getTapListDetailsForVenue correctly calls the api endpoint to fetch the ta
   t.is(mock.history.get.length, 1); // There has been one call to get
   t.is(result.status, 200);
   t.is(result.config.method, 'get');
-  t.is(result.config.url, 'https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469')
+  t.is(result.config.url, 'https://cwhgp6hr8i.execute-api.eu-west-2.amazonaws.com/prod?venueID=436469');
   t.deepEqual(result.data, responseData);
 
   mock.restore();
