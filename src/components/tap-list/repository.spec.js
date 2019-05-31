@@ -3,6 +3,10 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import getTapListDetailsForVenue from './repository.js';
 
+test('getTapListDetailsForVenue throws an error when not passed an HTTP client ', async t => {
+  await t.throwsAsync(getTapListDetailsForVenue(), {instanceOf: Error, message: 'Invalid parameter'});
+});
+
 test('getTapListDetailsForVenue correctly calls the api endpoint to fetch the taplist details', async t => {
   const responseData = {
     taplistDetails: {
