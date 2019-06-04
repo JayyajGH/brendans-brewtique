@@ -29,7 +29,8 @@
 
     <div class="footer__copyright u-align--center">
       <p class="small-text">Brendan's Brewtique is a company registered in the United Kingdom. Company number: 11421855.</p>
-      <p class="smallest-text">Site designed and developed by <a href="https://stash74.co.uk">Stash74</a> © 2018</p>
+      <!--<p class="smallest-text">Site designed and developed by <a href="https://stash74.co.uk">Stash74</a> © 2019</p>-->
+      <p class="smallest-text">Site designed and developed by Stash74 © 2019</p>
     </div>
   </footer>
 </template>
