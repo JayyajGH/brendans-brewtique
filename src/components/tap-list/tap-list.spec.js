@@ -11,6 +11,12 @@ const getTapListDetailsFactory = (tapList) => {
   }
 }
 
+const getTapListDetailsFactoryWithError = (tapList) => {
+  return async function() {
+    throw Error('API failure');
+  }
+}
+
 const tapListFactory = (getTapListDetails) => {
   return shallowMount(TapList, {
     methods: {
@@ -225,4 +231,19 @@ test('it renders correctly if there is no beverage name', async t => {
   t.true(wrapper.is('ul'));
   t.is(wrapper.findAll('li').length, 1);
   t.is(wrapper.find('h3').text(), 'by Verdant');
+});
+
+test('it handles the error when the taplist API returns an error', async t => {
+  // The created hook that sets up the taplist details will run synchronously even though
+  // it contains asynchronous code.  Therefore the throw from the API cannot be easily
+  // directly tested
+  // Therefore this test will create the component whilst forcing an API error.  We can
+  // then test that the component still gets set up correctly
+  let getTapList = getTapListDetailsFactoryWithError();
+  let wrapper = tapListFactory(getTapList);
+
+  await flushPromises();
+
+  t.true(wrapper.is('p'));
+  t.is(wrapper.find('p').text(), 'No details currently available.');
 });
