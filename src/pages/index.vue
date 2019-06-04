@@ -91,20 +91,28 @@
                 "longitude": "-2.611940"
              	},
 							"openingHoursSpecification": [
+								{
+							    "@type": "OpeningHoursSpecification",
+							    "dayOfWeek": [
+							      "Monday"
+							    ],
+							    "opens": "00:00",
+							    "closes": "00:00"
+							  },
 							  {
 							    "@type": "OpeningHoursSpecification",
 							    "dayOfWeek": [
-							      "Monday",
 							      "Tuesday",
 							      "Wednesday",
 							      "Thursday"
 							    ],
-							    "opens": "10:00",
+							    "opens": "12:00",
 							    "closes": "19:00"
 							  },
 							  {
 							    "@type": "OpeningHoursSpecification",
 							    "dayOfWeek": [
+										"Friday",
 							      "Saturday"
 							    ],
 							    "opens": "11:00",
@@ -115,8 +123,8 @@
 							    "dayOfWeek": [
 							      "Sunday"
 							    ],
-							    "opens": "00:00",
-							    "closes": "00:00"
+							    "opens": "12:00",
+							    "closes": "16:00"
 							  }
 							],
               "telephone": "+4401179831836",

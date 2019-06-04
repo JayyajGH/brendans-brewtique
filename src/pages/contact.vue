@@ -22,8 +22,12 @@
         <h2 class="heading2">When can you buy beer?</h2>
         <table>
           <tr>
-            <td class="opening__day">Mon to Thu</td>
-            <td>10:00 to 19:00</td>
+            <td class="opening__day">Mon</td>
+            <td>Closed</td>
+          </tr>
+          <tr>
+            <td class="opening__day">Tue to Thu</td>
+            <td>12:00 to 19:00</td>
           </tr>
           <tr>
             <td class="opening__day">Fri</td>
@@ -35,7 +39,7 @@
           </tr>
           <tr>
             <td class="opening__day">Sun</td>
-            <td>Closed</td>
+            <td>12:00 to 16:00</td>
           </tr>
         </table>
       </section>
