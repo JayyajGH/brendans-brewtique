@@ -31,11 +31,11 @@
           </tr>
           <tr>
             <td class="opening__day">Fri</td>
-            <td>11:00 to 22:00</td>
+            <td>12:00 to 21:00</td>
           </tr>
           <tr>
             <td class="opening__day">Sat</td>
-            <td>11:00 to 22:00</td>
+            <td>11:00 to 21:00</td>
           </tr>
           <tr>
             <td class="opening__day">Sun</td>
