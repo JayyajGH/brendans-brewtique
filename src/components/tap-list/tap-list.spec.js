@@ -13,7 +13,7 @@ const getTapListDetailsFactory = (tapList) => {
 
 const getTapListDetailsFactoryWithError = (tapList) => {
   return async function() {
-    throw Error('API failure');
+    throw Error('API failure from getTapListDetails');
   }
 }
 
