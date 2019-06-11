@@ -90,3 +90,34 @@ test('it correctly sets up component data when detecting a valid data', (t) => {
   t.is(wrapper.vm.errors.contactEmailError, '');
   t.is(wrapper.vm.errors.contactMessageError, '');
 });
+
+test('fireContactRequest throws an error if passed an empty token', async t => {
+  let wrapper = shallowMount(SendMessage);
+
+  await t.throwsAsync(
+    wrapper.vm.fireContactRequest(''),
+	  {instanceOf: Error, message: 'Invalid parameter'});
+});
+
+
+test('fireContactRequest throws an error if not passed a token', async t => {
+  let wrapper = shallowMount(SendMessage);
+
+  await t.throwsAsync(
+    wrapper.vm.fireContactRequest(),
+    {instanceOf: Error, message: 'Invalid parameter'});
+});
+
+
+test.skip('fireContactRequest correctly calls the API to send the message', async t => {
+  let wrapper = shallowMount(SendMessage);
+
+  wrapper.setData({contactName: 'Bob Smith'});
+  wrapper.setData({contactEmail: 'bob.smith@gmail.com'});
+  wrapper.setData({contactMessage: 'Test message'});
+
+  wrapper.vm.fireContactRequest('TEST-RECAPTCHA-TOKEN');
+
+  // Test that fireContactRequestWithMessage has been called once
+  // Test that fireContactRequestWithMessage has been called with the correct parameters
+});
