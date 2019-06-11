@@ -118,16 +118,32 @@
         document.getElementById('js-contact-form').style.display = 'none';
         document.getElementById('js-contact-thankyou').style.display = 'block';
       },
-      sendContactMessage() {
-        const reCAPTCHASiteKey = '6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26';
-        const reCAPTCHAAction = 'contact_request';
+      async fireContactRequest(recaptchaToken) {
+        if (!recaptchaToken) {
+          throw Error('Invalid parameter');
+        }
+
         const message = {
             contactFromName: this.contactName,
             contactFromAddress: this.contactEmail,
             subject: 'Website contact request',
             message: this.contactMessage,
-            recaptchaToken: ''
+            recaptchaToken: recaptchaToken
         };
+
+        try {
+          await fireContactRequestWithMessage(this.$axios, message);
+          this.displaySuccessMessage();
+        }
+        catch (error) {
+          console.log('An error has occured when attempting to send the contact request');
+          console.log(error);
+        }
+      },
+      sendContactMessage() {
+        const reCAPTCHASiteKey = '6LfSaqAUAAAAAMJr1PYrT2APx2TFgatoefX_Vt26';
+        const reCAPTCHAAction = 'contact_request';
+        let reCAPTCHAToken = '';
 
         if (this.formValid()) {
           console.log('Attempting to send a contact message from ' + message.contactFromName);
@@ -137,26 +153,18 @@
           grecaptcha.ready(async () => {
             try {
               // Call Google reCAPTCHA to get a verification token
-              message.recaptchaToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
+              reCAPTCHAToken = await grecaptcha.execute(reCAPTCHASiteKey, {action: reCAPTCHAAction});
             }
             catch (error) {
               console.log('An error has occured whilst getting the reCAPTCHA verification token');
               console.log(error);
             }
 
-            try {
-              await this.fireContactRequest(message);
-              this.displaySuccessMessage();
-            }
-            catch (error) {
-              console.log('An error has occured when attempting to send the contact request');
-              console.log(error);
+            if (reCAPTCHAToken) {
+              fireContactRequest(reCAPTCHAToken);
             }
           });
         }
-      },
-      async fireContactRequest(message) {
-        return fireContactRequestWithMessage(this.$axios, message);
       }
     }
   }
