@@ -161,7 +161,7 @@
             }
 
             if (reCAPTCHAToken) {
-              fireContactRequest(reCAPTCHAToken);
+              this.fireContactRequest(reCAPTCHAToken);
             }
           });
         }
