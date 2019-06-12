@@ -146,7 +146,7 @@
         let reCAPTCHAToken = '';
 
         if (this.formValid()) {
-          console.log('Attempting to send a contact message from ' + message.contactFromName);
+          console.log('Attempting to send a contact message from ' + this.contactName);
 
           // This form uses Google reCAPTCHA to protect the form submission
           // Check the Google reCAPTCHA library has loaded
