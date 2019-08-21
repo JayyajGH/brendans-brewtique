@@ -1,4 +1,4 @@
-# Brendans Brewtique
+# Brendan's Brewtique
 The website is built and deployed as a statically rendered (pre-rendered) app.
 
 ## Technologies used
