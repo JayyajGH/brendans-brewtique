@@ -13,3 +13,7 @@ The website is built and deployed as a statically rendered (pre-rendered) app.
 * Ava as a test runner
 * Sinon for mocking
 * Instanbul/NYC for code coverage
+
+### External dependencies
+* The taplist data comes from an external API hosted as an AWS Lambda
+* The send message functionality comes from an external AWS Lambda protected by Google reCAPTCHA
