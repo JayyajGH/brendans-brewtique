@@ -1,7 +1,7 @@
 <template>
   <header class="u-margin-bottom--medium" id="header">
 
-    <a href="#main" class="u-hidden-visually">Skip to main content</a>
+    <a href="#main" class="u-hidden-visually skip__link">Skip to main content</a>
 
     <nav class="site-nav">
       <div>
@@ -29,6 +29,12 @@
 </script>
 
 <style scoped lang="scss">
+  .skip__link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
   .logo__anchor {
     position: absolute;
     line-height: 0;
