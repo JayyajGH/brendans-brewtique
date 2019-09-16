@@ -1,7 +1,7 @@
 import pkg from './package';
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   head: {
     titleTemplate: '%sBrendan\'s Brewtique - Craft beer shop, bottles & taps - Clifton, Bristol',
     htmlAttrs: {
