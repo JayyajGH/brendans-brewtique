@@ -23,3 +23,4 @@ deploy:
   script:
     - pip install awscli
     - aws s3 cp dist s3://www.brendansbrewtique.co.uk/ --recursive
+    - aws cloudfront create-invalidation --distribution-id E2YAUY9ZR6N5FR --paths '/*'
