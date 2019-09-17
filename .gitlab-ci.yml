@@ -1,0 +1,24 @@
+build site:
+  image: node:10.16
+  stage: build
+  script:
+    - npm install --progress=false
+    - npm run generate
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
+
+unit test:
+  image: node:10.16
+  stage: test
+  script:
+    - npm install --progress=false
+    - npm run test
+
+deploy:
+  image: python:latest
+  stage: deploy
+  script:
+    - pip install awscli
+    - aws s3 cp dist s3://www.brendansbrewtique.co.uk/ --recursive
