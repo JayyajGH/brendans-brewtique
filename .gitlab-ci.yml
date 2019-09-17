@@ -15,6 +15,7 @@ unit test:
   script:
     - npm install --progress=false
     - npm run test
+  allow_failure: true
 
 deploy:
   image: python:latest
