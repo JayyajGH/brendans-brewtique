@@ -13,7 +13,8 @@
                      required aria-required="true"
                      :aria-invalid="errors.contactNameError ? true : false"
                      :aria-describedBy="errors.contactNameError ? 'name-error' : false"
-                     v-model="contactName">
+                     v-model="contactName"
+                     autocomplete="name">
               <div v-if="errors.contactNameError" id="name-error" class="form-field__error">{{errors.contactNameError}}</div>
             </div>
           </div>
@@ -27,7 +28,8 @@
                      required aria-required="true"
                      :aria-invalid="errors.contactEmailError ? true : false"
                      :aria-describedBy="errors.contactEmailError ? 'email-error' : false"
-                     v-model="contactEmail">
+                     v-model="contactEmail"
+                     autocomplete="email">
               <div v-if="errors.contactEmailError" id="email-error" class="form-field__error">{{errors.contactEmailError}}</div>
             </div>
           </div>
@@ -41,7 +43,8 @@
                         required aria-required="true"
                         :aria-invalid="errors.contactMessageError ? true : false"
                         :aria-describedBy="errors.contactMessageError ? 'message-error' : false"
-                        v-model="contactMessage"></textarea>
+                        v-model="contactMessage"
+                        autocomplete="off"></textarea>
               <div v-if="errors.contactMessageError" id="message-error" class="form-field__error">{{errors.contactMessageError}}</div>
             </div>
           </div>
