@@ -1,6 +1,9 @@
 # Brendan's Brewtique
 The website is built and deployed as a statically rendered (pre-rendered) app.
 
+It is currently hosted here as the company has now closed
+http://www.brendansbrewtique.co.uk.s3-website-eu-west-1.amazonaws.com/
+
 ## Technologies used
 
 ### Runtime
